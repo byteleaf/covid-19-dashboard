@@ -25,49 +25,33 @@ const selectedCountries: SelectedCountries = {
 };
 
 const fetchData = async (): Promise<FetchedData> => {
-  // Fetch infection csv from GitHub
-  const confirmedRes = await axios.get(
+  const urls = [
     'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv',
-  );
-  const deathsRes = await axios.get(
     'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv',
-  );
-  const recoveredRes = await axios.get(
     'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv',
-  );
+  ];
+
+  // Fetch infection csv from GitHub
+  const responses = await Promise.all(urls.map(url => axios.get(url)));
 
   // Parse CSV to JSON
-  const allConfirmedData = await csv().fromString(confirmedRes.data);
-  const allDeathsData = await csv().fromString(deathsRes.data);
-  const allRecoveredData = await csv().fromString(recoveredRes.data);
+  const allData = await Promise.all(responses.map(response => csv().fromString(response.data)));
 
   // Filter data of the selected countries
-  const selectedConfirmedCountryData = allConfirmedData.filter(country =>
-    selectedCountries.countries.includes(country['Country/Region']),
-  );
-  const selectedDeathsCountryData = allDeathsData.filter(country =>
-    selectedCountries.countries.includes(country['Country/Region']),
-  );
-  const selectedRecoveredCountryData = allRecoveredData.filter(country =>
-    selectedCountries.countries.includes(country['Country/Region']),
+  const selectedCountryData = allData.map(allD =>
+    allD.filter(country => selectedCountries.countries.includes(country['Country/Region'])),
   );
 
-  // Filtered data of the selected states
-  const summedUpConfirmedStateData = allConfirmedData.filter(country =>
-    selectedCountries.states.includes(country['Country/Region']),
-  );
-  const summedUpDeathsStateData = allDeathsData.filter(country =>
-    selectedCountries.states.includes(country['Country/Region']),
-  );
-  const summedUpRecoveredStateData = allRecoveredData.filter(country =>
-    selectedCountries.states.includes(country['Country/Region']),
+  // Filter data of the selected states
+  const selectedStateData = allData.map(allD =>
+    allD.filter(country => selectedCountries.states.includes(country['Country/Region'])),
   );
 
   // Combine Data and return
   return {
-    confirmed: [...selectedConfirmedCountryData, ...summedUpConfirmedStateData],
-    deaths: [...selectedDeathsCountryData, ...summedUpDeathsStateData],
-    recovered: [...selectedRecoveredCountryData, ...summedUpRecoveredStateData],
+    confirmed: [...selectedCountryData[0], ...selectedStateData[0]],
+    deaths: [...selectedCountryData[1], ...selectedStateData[1]],
+    recovered: [...selectedCountryData[2], ...selectedStateData[2]],
   };
 };
 
