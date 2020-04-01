@@ -65,7 +65,7 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle }: AreaChartProp
   }
 
   return (
-    <div>
+    <div className="w-1/2">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );
