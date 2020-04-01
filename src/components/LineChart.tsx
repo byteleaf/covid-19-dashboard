@@ -1,20 +1,25 @@
 import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import useData from '../helpers/useData';
+import { Country } from '../helpers/types';
 
-const LineChart = () => {
-  const { loading, data } = useData({
-    offset: 30,
-  });
+type LineChartProps = {
+  loading: boolean;
+  data: Country[] | null;
+  dataKey: 'infections' | 'deaths' | 'recovered';
+  title: string;
+  subtitle: string;
+  yAxisTitle: string;
+};
 
+const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle }: LineChartProps) => {
   const options = {
     title: {
-      text: 'Covid-19 Infections',
+      text: title,
     },
 
     subtitle: {
-      text: 'Infections in selected Countries',
+      text: subtitle,
     },
 
     xAxis: {
@@ -23,7 +28,7 @@ const LineChart = () => {
 
     yAxis: {
       title: {
-        text: 'Infections',
+        text: yAxisTitle,
       },
     },
 
@@ -51,7 +56,7 @@ const LineChart = () => {
 
     series: data?.map(country => ({
       name: country.name,
-      data: country.data.map(day => [day.date.getTime(), day.infections]),
+      data: country.data.map(day => [day.date.getTime(), day[dataKey]]),
     })),
 
     responsive: {

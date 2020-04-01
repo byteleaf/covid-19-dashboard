@@ -13,7 +13,11 @@ type SelectedCountries = {
   states: string[];
 };
 
-type FetchedData = { [key: string]: string }[];
+type FetchedData = {
+  confirmed: { [key: string]: string }[];
+  deaths: { [key: string]: string }[];
+  recovered: { [key: string]: string }[];
+};
 
 const selectedCountries: SelectedCountries = {
   countries: ['Germany', 'Italy', 'US', 'France', 'Spain', 'China'], // We don't want the Provinces of France to be in the Dataset
@@ -21,28 +25,54 @@ const selectedCountries: SelectedCountries = {
 };
 
 const fetchData = async (): Promise<FetchedData> => {
-  // Fetch csv from GitHub
-  const { data } = await axios.get(
+  // Fetch infection csv from GitHub
+  const confirmedRes = await axios.get(
     'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv',
+  );
+  const deathsRes = await axios.get(
+    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv',
+  );
+  const recoveredRes = await axios.get(
+    'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv',
   );
 
   // Parse CSV to JSON
-  const allData = await csv().fromString(data);
+  const allConfirmedData = await csv().fromString(confirmedRes.data);
+  const allDeathsData = await csv().fromString(deathsRes.data);
+  const allRecoveredData = await csv().fromString(recoveredRes.data);
 
   // Filter data of the selected countries
-  const selectedCountryData = allData.filter(country =>
+  const selectedConfirmedCountryData = allConfirmedData.filter(country =>
+    selectedCountries.countries.includes(country['Country/Region']),
+  );
+  const selectedDeathsCountryData = allDeathsData.filter(country =>
+    selectedCountries.countries.includes(country['Country/Region']),
+  );
+  const selectedRecoveredCountryData = allRecoveredData.filter(country =>
     selectedCountries.countries.includes(country['Country/Region']),
   );
 
   // Filtered data of the selected states
-  const summedUpStateData = allData.filter(country => selectedCountries.states.includes(country['Country/Region']));
+  const summedUpConfirmedStateData = allConfirmedData.filter(country =>
+    selectedCountries.states.includes(country['Country/Region']),
+  );
+  const summedUpDeathsStateData = allDeathsData.filter(country =>
+    selectedCountries.states.includes(country['Country/Region']),
+  );
+  const summedUpRecoveredStateData = allRecoveredData.filter(country =>
+    selectedCountries.states.includes(country['Country/Region']),
+  );
 
   // Combine Data and return
-  return [...selectedCountryData, ...summedUpStateData];
+  return {
+    confirmed: [...selectedConfirmedCountryData, ...summedUpConfirmedStateData],
+    deaths: [...selectedDeathsCountryData, ...summedUpDeathsStateData],
+    recovered: [...selectedRecoveredCountryData, ...summedUpRecoveredStateData],
+  };
 };
 
 const mapData = async (data: FetchedData, offset: number): Promise<Country[]> => {
-  const combinedStateAndCountryData = data.map(country => {
+  const combinedStateAndCountryData = data.confirmed.map((country, index) => {
     const countryData = cloneDeep(country);
 
     const countryName = countryData['Country/Region'];
@@ -58,6 +88,8 @@ const mapData = async (data: FetchedData, offset: number): Promise<Country[]> =>
     const mappedData: CountryData = Object.keys(countryData).map(key => ({
       date: new Date(key),
       infections: +countryData[key],
+      deaths: +data.deaths[index][key],
+      recovered: +data.recovered[index][key],
     }));
 
     return {
@@ -83,10 +115,12 @@ const mapData = async (data: FetchedData, offset: number): Promise<Country[]> =>
       const country = mappedData.find(c => c.name === newRow.name) as Country;
 
       // Sum up all state data and set as data of the country
-      country.data = country.data.map((datePoint, i) => ({
+      country.data = country.data.map((datePoint, index) => ({
         name: newRow.name,
         date: datePoint.date,
-        infections: datePoint.infections + newRow.data[i].infections,
+        infections: datePoint.infections + newRow.data[index].infections,
+        deaths: datePoint.deaths + newRow.data[index].deaths,
+        recovered: datePoint.recovered + newRow.data[index].recovered,
       }));
     }
   });
