@@ -3,9 +3,9 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import useData from '../helpers/useData';
 
-const Test = () => {
+const LineChart = () => {
   const { loading, data } = useData({
-    offset: 31,
+    offset: 30,
   });
 
   const options = {
@@ -42,6 +42,9 @@ const Test = () => {
       series: {
         label: {
           connectorAllowed: false,
+        },
+        marker: {
+          enabled: false,
         },
       },
     },
@@ -80,4 +83,4 @@ const Test = () => {
   );
 };
 
-export default Test;
+export default LineChart;

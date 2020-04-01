@@ -1,8 +1,8 @@
 import React from 'react';
-import Test from '../components/Test';
+import LineChart from '../components/LineChart';
 
 const Index = () => {
-  return <Test />;
+  return <LineChart />;
 };
 
 export default Index;
