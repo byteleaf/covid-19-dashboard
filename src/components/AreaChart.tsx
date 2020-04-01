@@ -9,9 +9,10 @@ type AreaChartProps = {
   title: string;
   subtitle: string;
   yAxisTitle: string;
+  logScale: boolean;
 };
 
-const AreaChart = ({ loading, data, title, subtitle, yAxisTitle }: AreaChartProps) => {
+const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: AreaChartProps) => {
   const options = {
     title: {
       text: title,
@@ -23,6 +24,7 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle }: AreaChartProp
       type: 'datetime',
     },
     yAxis: {
+      type: logScale ? 'logarithmic' : 'linear',
       title: {
         text: yAxisTitle,
       },

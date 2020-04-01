@@ -21,6 +21,7 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'react/jsx-props-no-spreading': 'off',
     'import/extensions': ['error', { tsx: 'off' }],
+    'jsx-a11y/anchor-is-valid': 'off',
   },
   settings: {
     react: {

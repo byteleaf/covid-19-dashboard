@@ -20,7 +20,7 @@ type FetchedData = {
 };
 
 const selectedCountries: SelectedCountries = {
-  countries: ['Germany', 'Italy', 'US', 'France', 'Spain', 'China'], // We don't want the Provinces of France to be in the Dataset
+  countries: ['Germany', 'Italy', 'US', 'France', 'Spain', 'Iran', 'United Kingdom'], // We don't want the Provinces of France to be in the Dataset
   states: ['China'], // Some countries are divided into states. Here we want to sum up all state data.
 };
 

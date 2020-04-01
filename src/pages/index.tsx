@@ -1,77 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import LineChart from '../components/LineChart';
 import useData from '../helpers/useData';
-import AreaChart from '../components/AreaChart';
-import { Country } from '../helpers/types';
+import Layout from '../components/layout/Layout';
 
 const Index = () => {
+  const [isLogScale, setIsLogScale] = useState(false);
+
   const { loading, data } = useData({
     offset: 30,
   });
 
   return (
-    <div className="flex flex-wrap">
-      <LineChart
-        loading={loading}
-        data={data}
-        dataKey="infections"
-        title="Covid-19 Infections"
-        subtitle="Infections in selected Countries"
-        yAxisTitle="Infections"
-      />
-      <LineChart
-        loading={loading}
-        data={data}
-        dataKey="deaths"
-        title="Covid-19 Deaths"
-        subtitle="Deaths in selected Countries"
-        yAxisTitle="Deaths"
-      />
-      <LineChart
-        loading={loading}
-        data={data}
-        dataKey="recovered"
-        title="Covid-19 Recovered People"
-        subtitle="Recovered People in selected Countries"
-        yAxisTitle="Recovered People"
-      />
-      <LineChart
-        loading={loading}
-        data={data}
-        dataKey="active"
-        title="Covid-19 Active Infections"
-        subtitle="Active Infections in selected Countries"
-        yAxisTitle="Active Infections"
-      />
-      <AreaChart
-        loading={loading}
-        data={data?.find(country => country.name === 'Germany') as Country}
-        title="Covid-19 in Germany"
-        subtitle="Active Cases, Deaths and Recovered"
-        yAxisTitle=""
-      />
-      <AreaChart
-        loading={loading}
-        data={data?.find(country => country.name === 'Italy') as Country}
-        title="Covid-19 in Italy"
-        subtitle="Active Cases, Deaths and Recovered"
-        yAxisTitle=""
-      />
-      <AreaChart
-        loading={loading}
-        data={data?.find(country => country.name === 'China') as Country}
-        title="Covid-19 in China"
-        subtitle="Active Cases, Deaths and Recovered"
-        yAxisTitle=""
-      />
-      <AreaChart
-        loading={loading}
-        data={data?.find(country => country.name === 'US') as Country}
-        title="Covid-19 in the US"
-        subtitle="Active Cases, Deaths and Recovered"
-        yAxisTitle=""
-      />
-    </div>
+    <Layout>
+      <div className="flex justify-center py-8">
+        <div className="border border-solid border-black">
+          <button
+            className={`p-2 focus:outline-none hover:bg-light-turquois ${isLogScale ? '' : 'bg-turquois text-white'}`}
+            type="button"
+            onClick={() => setIsLogScale(false)}
+          >
+            Linear Scale
+          </button>
+          <button
+            className={`p-2 border-l border-solid border-black focus:outline-none hover:bg-light-turquois ${
+              isLogScale ? 'bg-turquois text-white' : ''
+            }`}
+            type="button"
+            onClick={() => setIsLogScale(true)}
+          >
+            Log Scale
+          </button>
+        </div>
+      </div>
+      <div className="flex flex-wrap">
+        <LineChart
+          loading={loading}
+          data={data}
+          dataKey="infections"
+          title="Covid-19 Infections"
+          subtitle="Infections in selected Countries"
+          yAxisTitle="Infections"
+          logScale={isLogScale}
+        />
+        <LineChart
+          loading={loading}
+          data={data}
+          dataKey="deaths"
+          title="Covid-19 Deaths"
+          subtitle="Deaths in selected Countries"
+          yAxisTitle="Deaths"
+          logScale={isLogScale}
+        />
+        <LineChart
+          loading={loading}
+          data={data}
+          dataKey="recovered"
+          title="Covid-19 Recovered People"
+          subtitle="Recovered People in selected Countries"
+          yAxisTitle="Recovered People"
+          logScale={isLogScale}
+        />
+        <LineChart
+          loading={loading}
+          data={data}
+          dataKey="active"
+          title="Covid-19 Active Infections"
+          subtitle="Active Infections in selected Countries"
+          yAxisTitle="Active Infections"
+          logScale={isLogScale}
+        />
+      </div>
+    </Layout>
   );
 };
 

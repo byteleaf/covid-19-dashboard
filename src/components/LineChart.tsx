@@ -10,39 +10,38 @@ type LineChartProps = {
   title: string;
   subtitle: string;
   yAxisTitle: string;
+  logScale: boolean;
 };
 
-const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle }: LineChartProps) => {
+const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logScale }: LineChartProps) => {
   const options = {
+    chart: {
+      height: 500,
+    },
     title: {
       text: title,
     },
-
     subtitle: {
       text: subtitle,
     },
-
     xAxis: {
       type: 'datetime',
     },
-
     yAxis: {
+      type: logScale ? 'logarithmic' : 'linear',
       title: {
         text: yAxisTitle,
       },
     },
-
     legend: {
       layout: 'vertical',
       align: 'right',
       verticalAlign: 'middle',
     },
-
     tooltip: {
       crosshairs: true,
       shared: true,
     },
-
     plotOptions: {
       series: {
         label: {
@@ -53,12 +52,10 @@ const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle }: Line
         },
       },
     },
-
     series: data?.map(country => ({
       name: country.name,
       data: country.data.map(day => [day.date.getTime(), day[dataKey]]),
     })),
-
     responsive: {
       rules: [
         {
