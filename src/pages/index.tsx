@@ -7,30 +7,32 @@ const Index = () => {
   const [isLogScale, setIsLogScale] = useState(false);
 
   const { loading, data } = useData({
-    offset: 30,
+    offset: 21,
   });
 
   return (
     <Layout>
       <div className="flex justify-center py-8">
-        <div className="border border-solid border-black">
-          <button
-            className={`p-2 focus:outline-none hover:bg-light-turquois ${isLogScale ? '' : 'bg-turquois text-white'}`}
-            type="button"
-            onClick={() => setIsLogScale(false)}
-          >
-            Linear Scale
-          </button>
-          <button
-            className={`p-2 border-l border-solid border-black focus:outline-none hover:bg-light-turquois ${
-              isLogScale ? 'bg-turquois text-white' : ''
-            }`}
-            type="button"
-            onClick={() => setIsLogScale(true)}
-          >
-            Log Scale
-          </button>
-        </div>
+        {!loading && (
+          <div className="border border-solid border-black">
+            <button
+              className={`p-2 focus:outline-none hover:bg-light-turquois ${isLogScale ? '' : 'bg-turquois text-white'}`}
+              type="button"
+              onClick={() => setIsLogScale(false)}
+            >
+              Linear Scale
+            </button>
+            <button
+              className={`p-2 border-l border-solid border-black focus:outline-none hover:bg-light-turquois ${
+                isLogScale ? 'bg-turquois text-white' : ''
+              }`}
+              type="button"
+              onClick={() => setIsLogScale(true)}
+            >
+              Log Scale
+            </button>
+          </div>
+        )}
       </div>
       <div className="flex flex-wrap">
         <LineChart
