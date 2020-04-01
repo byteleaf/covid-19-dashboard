@@ -6,7 +6,7 @@ import { Country } from '../helpers/types';
 type LineChartProps = {
   loading: boolean;
   data: Country[] | null;
-  dataKey: 'infections' | 'deaths' | 'recovered';
+  dataKey: 'infections' | 'deaths' | 'recovered' | 'active';
   title: string;
   subtitle: string;
   yAxisTitle: string;

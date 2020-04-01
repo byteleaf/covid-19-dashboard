@@ -3,6 +3,7 @@ export type CountryDataPoint = {
   infections: number;
   deaths: number;
   recovered: number;
+  active: number;
 };
 
 export type CountryData = CountryDataPoint[];

@@ -74,6 +74,7 @@ const mapData = async (data: FetchedData, offset: number): Promise<Country[]> =>
       infections: +countryData[key],
       deaths: +data.deaths[index][key],
       recovered: +data.recovered[index][key],
+      active: +countryData[key] - +data.deaths[index][key] - +data.recovered[index][key],
     }));
 
     return {
@@ -105,6 +106,7 @@ const mapData = async (data: FetchedData, offset: number): Promise<Country[]> =>
         infections: datePoint.infections + newRow.data[index].infections,
         deaths: datePoint.deaths + newRow.data[index].deaths,
         recovered: datePoint.recovered + newRow.data[index].recovered,
+        active: datePoint.active + newRow.data[index].active,
       }));
     }
   });
