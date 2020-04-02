@@ -99,7 +99,11 @@ const DoublingTimeChart = ({ loading, data, dataKey, startValue, title, xAxisTit
     },
     tooltip: {
       crosshairs: true,
-      shared: true,
+      backgroundColor: '#FFFFFF',
+      borderColor: '#0AB4B4',
+      borderRadius: 0,
+      borderWidth: 1,
+      shadow: false,
     },
     plotOptions: {
       series: {
@@ -108,6 +112,11 @@ const DoublingTimeChart = ({ loading, data, dataKey, startValue, title, xAxisTit
         },
         marker: {
           enabled: false,
+        },
+        states: {
+          hover: {
+            enabled: false,
+          },
         },
       },
     },

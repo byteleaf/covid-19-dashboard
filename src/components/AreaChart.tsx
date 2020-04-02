@@ -34,11 +34,16 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: Are
       height: 700,
     },
     tooltip: {
-      split: true,
+      shared: true,
       crosshairs: true,
       marker: {
         enabled: false,
       },
+      backgroundColor: '#FFFFFF',
+      borderColor: '#0AB4B4',
+      borderRadius: 0,
+      borderWidth: 1,
+      shadow: false,
     },
     plotOptions: {
       area: {
@@ -46,6 +51,11 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: Are
         lineWidth: 0,
         marker: {
           enabled: false,
+        },
+        states: {
+          hover: {
+            enabled: false,
+          },
         },
       },
     },

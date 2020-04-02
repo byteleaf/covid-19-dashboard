@@ -44,6 +44,11 @@ const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logSca
     tooltip: {
       crosshairs: true,
       shared: true,
+      backgroundColor: '#FFFFFF',
+      borderColor: '#0AB4B4',
+      borderRadius: 0,
+      borderWidth: 1,
+      shadow: false,
     },
     plotOptions: {
       series: {
@@ -52,6 +57,11 @@ const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logSca
         },
         marker: {
           enabled: false,
+        },
+        states: {
+          hover: {
+            enabled: false,
+          },
         },
       },
     },
