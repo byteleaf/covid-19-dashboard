@@ -1,22 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { Country } from '../helpers/types';
+import { Country } from '../../helpers/types';
+import { ScreenHeightContext } from '../../helpers/screenHeightContext';
+import { StateColors, TooltipColors } from '../../helpers/Colors';
 
 type AreaChartProps = {
   loading: boolean;
   data: Country | null;
   title: string;
   subtitle: string;
-  yAxisTitle: string;
   logScale: boolean;
 };
 
-const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: AreaChartProps) => {
-  const [height, setHeight] = useState<number | null>(null);
-  if (process.browser) {
-    useEffect(() => setHeight(document.children[0].clientHeight), [document.children[0].clientHeight]);
-  }
+const AreaChart: React.SFC<AreaChartProps> = ({ loading, data, title, subtitle, logScale }) => {
+  const screenHeight = useContext(ScreenHeightContext);
 
   const options = {
     title: {
@@ -30,13 +28,10 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: Are
     },
     yAxis: {
       type: logScale ? 'logarithmic' : 'linear',
-      title: {
-        text: yAxisTitle,
-      },
     },
     chart: {
       type: 'area',
-      height: height ? height * 0.6 : 600,
+      height: screenHeight ? screenHeight * 0.6 : 600,
     },
     tooltip: {
       shared: true,
@@ -44,8 +39,8 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: Are
       marker: {
         enabled: false,
       },
-      backgroundColor: '#FFFFFF',
-      borderColor: '#0AB4B4',
+      backgroundColor: TooltipColors.Background,
+      borderColor: TooltipColors.Border,
       borderRadius: 0,
       borderWidth: 1,
       shadow: false,
@@ -68,17 +63,17 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: Are
       {
         name: 'Active',
         data: data?.data.map(day => [day.date.getTime(), day.active]),
-        color: '#ff8080',
+        color: StateColors.Active,
       },
       {
         name: 'Deaths',
         data: data?.data.map(day => [day.date.getTime(), day.deaths]),
-        color: '#000000',
+        color: StateColors.Deaths,
       },
       {
         name: 'Recovered',
         data: data?.data.map(day => [day.date.getTime(), day.recovered]),
-        color: '#00AA00',
+        color: StateColors.Recovered,
       },
     ],
   };

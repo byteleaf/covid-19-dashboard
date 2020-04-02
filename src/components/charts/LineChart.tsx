@@ -1,8 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { Country } from '../helpers/types';
-import Colors from '../helpers/Colors';
+import { Country } from '../../helpers/types';
+import { CountryColors, TooltipColors } from '../../helpers/Colors';
+import { ScreenHeightContext } from '../../helpers/screenHeightContext';
 
 type LineChartProps = {
   loading: boolean;
@@ -14,17 +15,14 @@ type LineChartProps = {
   logScale: boolean;
 };
 
-const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logScale }: LineChartProps) => {
-  const [height, setHeight] = useState<number | null>(null);
-  if (process.browser) {
-    useEffect(() => setHeight(document.children[0].clientHeight), [document.children[0].clientHeight]);
-  }
+const LineChart: React.SFC<LineChartProps> = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logScale }) => {
+  const screenHeight = useContext(ScreenHeightContext);
 
   const options = {
     chart: {
       type: 'line',
       zoomType: 'x',
-      height: height ? height * 0.6 : 600,
+      height: screenHeight ? screenHeight * 0.6 : 600,
     },
     title: {
       text: title,
@@ -49,8 +47,8 @@ const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logSca
     tooltip: {
       crosshairs: true,
       shared: true,
-      backgroundColor: '#FFFFFF',
-      borderColor: '#0AB4B4',
+      backgroundColor: TooltipColors.Background,
+      borderColor: TooltipColors.Border,
       borderRadius: 0,
       borderWidth: 1,
       shadow: false,
@@ -73,7 +71,7 @@ const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logSca
     series: data?.map(country => ({
       name: country.name,
       data: country.data.map(day => [day.date.getTime(), day[dataKey]]),
-      color: Colors[country.name],
+      color: CountryColors[country.name],
     })),
     responsive: {
       rules: [

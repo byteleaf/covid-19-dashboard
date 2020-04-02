@@ -1,5 +1,5 @@
 import React from 'react';
-import DoublingTimeChart from '../components/DoublingTimeChart';
+import DoublingTimeChart from '../components/charts/DoublingTimeChart';
 import useData from '../helpers/useData';
 import Layout from '../components/layout/Layout';
 

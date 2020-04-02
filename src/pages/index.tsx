@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import LineChart from '../components/LineChart';
+import LineChart from '../components/charts/LineChart';
 import useData from '../helpers/useData';
 import Layout from '../components/layout/Layout';
+import LogScaleSwitch from '../components/switches/LogScaleSwitch';
 
 const Index = () => {
   const [isLogScale, setIsLogScale] = useState(false);
@@ -14,24 +15,7 @@ const Index = () => {
     <Layout>
       <div className="flex justify-center pt-8">
         {!loading && (
-          <div className="border border-solid border-black">
-            <button
-              className={`p-2 focus:outline-none hover:bg-light-turquois ${isLogScale ? '' : 'bg-turquois text-white'}`}
-              type="button"
-              onClick={() => setIsLogScale(false)}
-            >
-              Linear Scale
-            </button>
-            <button
-              className={`p-2 border-l border-solid border-black focus:outline-none hover:bg-light-turquois ${
-                isLogScale ? 'bg-turquois text-white' : ''
-              }`}
-              type="button"
-              onClick={() => setIsLogScale(true)}
-            >
-              Log Scale
-            </button>
-          </div>
+          <LogScaleSwitch isLogScale={isLogScale} setIsLogScale={(setTo: boolean) => setIsLogScale(setTo)} />
         )}
       </div>
       <div className="flex flex-wrap">

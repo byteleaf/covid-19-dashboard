@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { take } from 'lodash';
-import { Country, CountryDataPoint } from '../helpers/types';
-import Colors from '../helpers/Colors';
+import { Country, CountryDataPoint } from '../../helpers/types';
+import { CountryColors, HelperColors, TooltipColors } from '../../helpers/Colors';
+import { ScreenHeightContext } from '../../helpers/screenHeightContext';
 
-type LineChartProps = {
+type DoublingTimeChartProps = {
   loading: boolean;
   data: Country[] | null;
   dataKey: 'infections' | 'deaths' | 'recovered' | 'active';
@@ -24,11 +25,16 @@ type LineData = {
 
 const firstXDays = 60;
 
-const DoublingTimeChart = ({ loading, data, dataKey, startValue, title, xAxisTitle, yAxisTitle }: LineChartProps) => {
-  const [height, setHeight] = useState<number | null>(null);
-  if (process.browser) {
-    useEffect(() => setHeight(document.children[0].clientHeight), [document.children[0].clientHeight]);
-  }
+const DoublingTimeChart: React.SFC<DoublingTimeChartProps> = ({
+  loading,
+  data,
+  dataKey,
+  startValue,
+  title,
+  xAxisTitle,
+  yAxisTitle,
+}) => {
+  const screenHeight = useContext(ScreenHeightContext);
 
   const mappedData = data?.map(
     (country): Country => ({
@@ -56,22 +62,17 @@ const DoublingTimeChart = ({ loading, data, dataKey, startValue, title, xAxisTit
       return [day, currentValue];
     }),
     dashStyle: 'Dot',
-    color: '#999999',
+    color: HelperColors.DotLine,
   });
 
-  const doublingLines: LineData[] = [
-    createDoublingLine(2),
-    createDoublingLine(3),
-    createDoublingLine(4),
-    createDoublingLine(5),
-  ];
+  const doublingLines: LineData[] = [...Array(4)].map((_, i) => createDoublingLine(i + 2));
 
   const lineData: LineData[] =
     mappedData?.map(country => ({
       name: country.name,
       data: country.data.map(row => [row.day as number, row[dataKey]]),
       dashStyle: 'Solid',
-      color: Colors[country.name],
+      color: CountryColors[country.name],
     })) || [];
 
   const dataPlusLines: LineData[] = [...lineData, ...doublingLines];
@@ -80,7 +81,7 @@ const DoublingTimeChart = ({ loading, data, dataKey, startValue, title, xAxisTit
     chart: {
       type: 'line',
       zoomType: 'x',
-      height: height ? height * 0.85 : 600,
+      height: screenHeight ? screenHeight * 0.85 : 600,
     },
     title: {
       text: title,
@@ -103,8 +104,8 @@ const DoublingTimeChart = ({ loading, data, dataKey, startValue, title, xAxisTit
     },
     tooltip: {
       crosshairs: true,
-      backgroundColor: '#FFFFFF',
-      borderColor: '#0AB4B4',
+      backgroundColor: TooltipColors.Background,
+      borderColor: TooltipColors.Border,
       borderRadius: 0,
       borderWidth: 1,
       shadow: false,
