@@ -5,7 +5,7 @@ export interface LogScaleSwitchProps {
   setIsLogScale: (isLogScale: boolean) => void;
 }
 
-const LogScaleSwitch: React.SFC<LogScaleSwitchProps> = ({ isLogScale, setIsLogScale }) => {
+const LogScaleSwitch: React.FC<LogScaleSwitchProps> = ({ isLogScale, setIsLogScale }) => {
   return (
     <div className="border border-solid border-black">
       <button

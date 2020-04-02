@@ -4,6 +4,7 @@ import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../../helpers/types';
 import { ScreenHeightContext } from '../../helpers/screenHeightContext';
 import { StateColors, TooltipColors } from '../../helpers/Colors';
+import returnTimeInMs from '../../helpers/returnTimeInMs';
 
 type AreaChartProps = {
   loading: boolean;
@@ -13,7 +14,7 @@ type AreaChartProps = {
   logScale: boolean;
 };
 
-const AreaChart: React.SFC<AreaChartProps> = ({ loading, data, title, subtitle, logScale }) => {
+const AreaChart: React.FC<AreaChartProps> = ({ loading, data, title, subtitle, logScale }) => {
   const screenHeight = useContext(ScreenHeightContext);
 
   const options = {
@@ -62,17 +63,17 @@ const AreaChart: React.SFC<AreaChartProps> = ({ loading, data, title, subtitle, 
     series: [
       {
         name: 'Active',
-        data: data?.data.map(day => [day.date.getTime(), day.active]),
+        data: data?.data.map(day => [returnTimeInMs(day.date), day.active]),
         color: StateColors.Active,
       },
       {
         name: 'Deaths',
-        data: data?.data.map(day => [day.date.getTime(), day.deaths]),
+        data: data?.data.map(day => [returnTimeInMs(day.date), day.deaths]),
         color: StateColors.Deaths,
       },
       {
         name: 'Recovered',
-        data: data?.data.map(day => [day.date.getTime(), day.recovered]),
+        data: data?.data.map(day => [returnTimeInMs(day.date), day.recovered]),
         color: StateColors.Recovered,
       },
     ],

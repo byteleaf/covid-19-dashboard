@@ -4,6 +4,7 @@ import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../../helpers/types';
 import { CountryColors, TooltipColors } from '../../helpers/Colors';
 import { ScreenHeightContext } from '../../helpers/screenHeightContext';
+import returnTimeInMs from '../../helpers/returnTimeInMs';
 
 type LineChartProps = {
   loading: boolean;
@@ -15,7 +16,7 @@ type LineChartProps = {
   logScale: boolean;
 };
 
-const LineChart: React.SFC<LineChartProps> = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logScale }) => {
+const LineChart: React.FC<LineChartProps> = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logScale }) => {
   const screenHeight = useContext(ScreenHeightContext);
 
   const options = {
@@ -70,7 +71,7 @@ const LineChart: React.SFC<LineChartProps> = ({ loading, data, dataKey, title, s
     },
     series: data?.map(country => ({
       name: country.name,
-      data: country.data.map(day => [day.date.getTime(), day[dataKey]]),
+      data: country.data.map(day => [returnTimeInMs(day.date), day[dataKey]]),
       color: CountryColors[country.name],
     })),
     responsive: {

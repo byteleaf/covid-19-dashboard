@@ -25,7 +25,7 @@ type LineData = {
 
 const firstXDays = 60;
 
-const DoublingTimeChart: React.SFC<DoublingTimeChartProps> = ({
+const DoublingTimeChart: React.FC<DoublingTimeChartProps> = ({
   loading,
   data,
   dataKey,
