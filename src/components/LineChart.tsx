@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../helpers/types';
@@ -15,11 +15,16 @@ type LineChartProps = {
 };
 
 const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logScale }: LineChartProps) => {
+  const [height, setHeight] = useState<number | null>(null);
+  if (process.browser) {
+    useEffect(() => setHeight(document.children[0].clientHeight), [document.children[0].clientHeight]);
+  }
+
   const options = {
     chart: {
       type: 'line',
       zoomType: 'x',
-      height: 700,
+      height: height ? height * 0.6 : 600,
     },
     title: {
       text: title,

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../helpers/types';
@@ -13,6 +13,11 @@ type AreaChartProps = {
 };
 
 const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: AreaChartProps) => {
+  const [height, setHeight] = useState<number | null>(null);
+  if (process.browser) {
+    useEffect(() => setHeight(document.children[0].clientHeight), [document.children[0].clientHeight]);
+  }
+
   const options = {
     title: {
       text: title,
@@ -31,7 +36,7 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: Are
     },
     chart: {
       type: 'area',
-      height: 700,
+      height: height ? height * 0.6 : 600,
     },
     tooltip: {
       shared: true,
