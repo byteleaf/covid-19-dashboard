@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import csv from 'csvtojson';
 import axios from 'axios';
-import { cloneDeep, drop } from 'lodash';
-import { Country, CountryData } from './types';
+import { cloneDeep, takeRight } from 'lodash';
+import { Country, CountryData, CountryName } from './types';
 
 type UseDataProps = {
   offset?: number; // Only fetch the last X days
@@ -20,7 +20,7 @@ type FetchedData = {
 };
 
 const selectedCountries: SelectedCountries = {
-  countries: ['Germany', 'Italy', 'US', 'France', 'Spain', 'Iran', 'United Kingdom'], // We don't want the Provinces of France to be in the Dataset
+  countries: ['Germany', 'Italy', 'US', 'France', 'Spain', 'United Kingdom'], // We don't want the Provinces of France to be in the Dataset
   states: ['China'], // Some countries are divided into states. Here we want to sum up all state data.
 };
 
@@ -78,9 +78,9 @@ const mapData = async (data: FetchedData, offset: number): Promise<Country[]> =>
     }));
 
     return {
-      name: countryName,
+      name: countryName as CountryName,
       state: stateName, // Can be null if row is a country
-      data: drop(mappedData, offset), // Only take the last X days
+      data: offset > 0 ? takeRight(mappedData, offset) : mappedData, // Only take the last X days
     };
   });
 

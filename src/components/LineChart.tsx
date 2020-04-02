@@ -2,6 +2,7 @@ import React from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../helpers/types';
+import Colors from '../helpers/Colors';
 
 type LineChartProps = {
   loading: boolean;
@@ -16,7 +17,9 @@ type LineChartProps = {
 const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logScale }: LineChartProps) => {
   const options = {
     chart: {
-      height: 500,
+      type: 'line',
+      zoomType: 'x',
+      height: 700,
     },
     title: {
       text: title,
@@ -55,6 +58,7 @@ const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logSca
     series: data?.map(country => ({
       name: country.name,
       data: country.data.map(day => [day.date.getTime(), day[dataKey]]),
+      color: Colors[country.name],
     })),
     responsive: {
       rules: [

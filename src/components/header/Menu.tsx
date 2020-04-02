@@ -31,6 +31,16 @@ const Menu = ({ isExpanded }: { isExpanded: boolean }) => {
           All in One
         </a>
       </Link>
+      <Link href="/doubling-times">
+        <a
+          className={`${
+            router.pathname === '/doubling-times' ? 'border-solid border-turquois border-b-3' : ''
+          } block text-center h-16 font-roboto-mono text-turquois text-base uppercase tracking-widest-2 px-4 py-1 hover:border-solid hover:text-ultralight-turquois hover:border-turquois hover:border-b-3`}
+          style={{ lineHeight: '56px' }}
+        >
+          Doubling Times
+        </a>
+      </Link>
     </nav>
   );
 };

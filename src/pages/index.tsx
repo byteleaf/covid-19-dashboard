@@ -12,7 +12,7 @@ const Index = () => {
 
   return (
     <Layout>
-      <div className="flex justify-center py-8">
+      <div className="flex justify-center pt-8">
         {!loading && (
           <div className="border border-solid border-black">
             <button

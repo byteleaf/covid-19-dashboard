@@ -1,5 +1,5 @@
 import React from 'react';
-import Highcharts from 'highcharts';
+import Highcharts, { ChartOptions } from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../helpers/types';
 
@@ -31,16 +31,19 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: Are
     },
     chart: {
       type: 'area',
+      height: 700,
     },
     tooltip: {
       split: true,
       crosshairs: true,
+      marker: {
+        enabled: false,
+      },
     },
     plotOptions: {
       area: {
         stacking: 'normal',
-        lineColor: '#666666',
-        lineWidth: 1,
+        lineWidth: 0,
         marker: {
           enabled: false,
         },
@@ -50,14 +53,17 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: Are
       {
         name: 'Active',
         data: data?.data.map(day => [day.date.getTime(), day.active]),
+        color: '#ff8080',
       },
       {
         name: 'Deaths',
         data: data?.data.map(day => [day.date.getTime(), day.deaths]),
+        color: '#000000',
       },
       {
         name: 'Recovered',
         data: data?.data.map(day => [day.date.getTime(), day.recovered]),
+        color: '#00AA00',
       },
     ],
   };

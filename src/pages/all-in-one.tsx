@@ -13,7 +13,7 @@ const AllInOne = () => {
 
   return (
     <Layout>
-      <div className="flex justify-center py-8">
+      <div className="flex justify-center pt-8">
         {!loading && (
           <div className="border border-solid border-black">
             <button
@@ -88,14 +88,6 @@ const AllInOne = () => {
           loading={loading}
           data={data?.find(country => country.name === 'France') as Country}
           title="Covid-19 in France"
-          subtitle="Active Cases, Deaths and Recovered"
-          yAxisTitle=""
-          logScale={isLogScale}
-        />
-        <AreaChart
-          loading={loading}
-          data={data?.find(country => country.name === 'Iran') as Country}
-          title="Covid-19 in Iran"
           subtitle="Active Cases, Deaths and Recovered"
           yAxisTitle=""
           logScale={isLogScale}
