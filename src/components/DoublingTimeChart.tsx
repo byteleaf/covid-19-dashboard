@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { take } from 'lodash';
@@ -25,6 +25,11 @@ type LineData = {
 const firstXDays = 60;
 
 const DoublingTimeChart = ({ loading, data, dataKey, startValue, title, xAxisTitle, yAxisTitle }: LineChartProps) => {
+  const [height, setHeight] = useState<number | null>(null);
+  if (process.browser) {
+    useEffect(() => setHeight(document.children[0].clientHeight), [document.children[0].clientHeight]);
+  }
+
   const mappedData = data?.map(
     (country): Country => ({
       name: country.name,
@@ -75,8 +80,7 @@ const DoublingTimeChart = ({ loading, data, dataKey, startValue, title, xAxisTit
     chart: {
       type: 'line',
       zoomType: 'x',
-      width: 2400,
-      height: 1200,
+      height: height ? height * 0.85 : 600,
     },
     title: {
       text: title,

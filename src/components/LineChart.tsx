@@ -93,7 +93,7 @@ const LineChart = ({ loading, data, dataKey, title, subtitle, yAxisTitle, logSca
   }
 
   return (
-    <div className="w-1/2">
+    <div className="w-full md:w-1/2 pb-12">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

@@ -10,12 +10,12 @@ const DoublingTimes = () => {
 
   return (
     <Layout>
-      <div className="flex flex-wrap">
+      <div className="flex flex-col">
         <DoublingTimeChart
           loading={loading}
           data={data}
           dataKey="infections"
-          startValue={100}
+          startValue={1000}
           title="Covid-19 Infection Doubling Time"
           xAxisTitle="Days since the 100th Infection"
           yAxisTitle="Infections"

@@ -1,5 +1,5 @@
 import React from 'react';
-import Highcharts, { ChartOptions } from 'highcharts';
+import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../helpers/types';
 
@@ -83,7 +83,7 @@ const AreaChart = ({ loading, data, title, subtitle, yAxisTitle, logScale }: Are
   }
 
   return (
-    <div className="w-1/2">
+    <div className="w-full md:w-1/2 pb-12">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );
