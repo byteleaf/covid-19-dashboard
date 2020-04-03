@@ -49,7 +49,7 @@ const Page: React.SFC = () => {
 
   return (
     <Layout>
-      <div className="flex justify-center pt-8">
+      <div className="flex justify-center pt-8 px-4">
         <Select
           value={selectedCountries}
           onChange={onCountriesChanged}
@@ -59,7 +59,7 @@ const Page: React.SFC = () => {
           styles={countrySelectionStyles}
         />
       </div>
-      <div className="flex justify-center pt-8">
+      <div className="flex justify-center pt-8 px-4">
         {!loading && pathname !== '/page/doubling-times' && (
           <LogScaleSwitch isLogScale={isLogScale} setIsLogScale={(setTo: boolean) => setIsLogScale(setTo)} />
         )}
