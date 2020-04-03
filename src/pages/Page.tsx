@@ -27,7 +27,35 @@ const defaultCountries: SelectOption[] = DefaultCountries.map(country => ({
 }));
 
 const countrySelectionStyles = {
-  control: (styles: CSSProperties) => ({ ...styles, minWidth: '300px' }),
+  control: (styles: CSSProperties) => ({
+    ...styles,
+    minWidth: '300px',
+    borderRadius: 0,
+    borderColor: '#000000',
+  }),
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  option: (styles: any, { isFocused, isSelected }: any) => ({
+    ...styles,
+    // eslint-disable-next-line no-nested-ternary
+    backgroundColor: isSelected ? '#0AB4B4' : isFocused ? '#0AB4B4' : null,
+    // eslint-disable-next-line no-nested-ternary
+    color: isSelected ? '#FFFFFF' : isFocused ? '#FFFFFF' : null,
+    ':active': {
+      ...styles[':active'],
+      backgroundColor: '#0AB4B4',
+    },
+  }),
+  multiValueRemove: (styles: CSSProperties) => ({
+    ...styles,
+    ':hover': {
+      backgroundColor: '#0AB4B4',
+    },
+  }),
+  multiValue: (styles: CSSProperties) => ({
+    ...styles,
+    borderRadius: 0,
+    backgroundColor: '#DCD9D6',
+  }),
 };
 
 const Page: React.SFC = () => {
