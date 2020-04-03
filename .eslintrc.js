@@ -17,11 +17,22 @@ module.exports = {
     '@typescript-eslint/indent': 'off',
     'react/prop-types': 'off',
     'react/jsx-filename-extension': 'off',
+    'react/button-has-type': 'off',
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/explicit-member-accessibility': 'off',
     'import/prefer-default-export': 'off',
+    'no-console': ['error', { allow: ['warn', 'error'] }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: ['src/stories/**/*.stories.js', '**/*.test.js'],
+      },
+    ],
     'react/jsx-props-no-spreading': 'off',
     'import/extensions': ['error', { tsx: 'off' }],
-    'jsx-a11y/anchor-is-valid': 'off',
+    'jsx-a11y/label-has-associated-control': 'off',
+    'no-underscore-dangle': 'off',
+    'react-hooks/exhaustive-deps': 'off',
   },
   settings: {
     react: {

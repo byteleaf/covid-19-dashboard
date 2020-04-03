@@ -1,7 +1,7 @@
 module.exports = {
   tailwind: {
     plugins: ['macros'],
-    config: './tailwind.config.js',
+    config: './src/tailwind.config.js',
     format: 'auto',
     styled: 'styled-components',
   },

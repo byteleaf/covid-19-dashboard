@@ -1,12 +1,13 @@
 import React from 'react';
-import DoublingTimeChart from '../components/charts/DoublingTimeChart';
-import useData from '../helpers/hooks/useData';
-import Layout from '../components/layout/Layout';
+import DoublingTimeChart from '../../components/charts/DoublingTimeChart';
+import useData from '../../helpers/hooks/useData';
+import Layout from '../../components/layout/Layout';
 
 const DoublingTimes = () => {
   const { loading, data } = useData({
     offset: 0,
     selectedCountries: ['Germany', 'Italy', 'US', 'France', 'Spain', 'United Kingdom', 'China'],
+    numberOfCountries: 7,
   });
 
   return (

@@ -85,8 +85,7 @@ a {
 abbr[title] {
   border-bottom: none; /* 1 */
   text-decoration: underline; /* 2 */
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted; /* 2 */
+  text-decoration: underline dotted; /* 2 */
 }
 
 /**
@@ -480,22 +479,6 @@ textarea {
   resize: vertical;
 }
 
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
-  color: #a0aec0;
-}
-
-input::-moz-placeholder, textarea::-moz-placeholder {
-  color: #a0aec0;
-}
-
-input:-ms-input-placeholder, textarea:-ms-input-placeholder {
-  color: #a0aec0;
-}
-
-input::-ms-input-placeholder, textarea::-ms-input-placeholder {
-  color: #a0aec0;
-}
-
 input::placeholder,
 textarea::placeholder {
   color: #a0aec0;
@@ -621,199 +604,6 @@ video {
   .container {
     max-width: 1280px;
   }
-}
-
-@import url('https://p.typekit.net/p.css?s=1&k=lnn7pdm&ht=tk&f=24561.24563.28726.28901&a=17658617&app=typekit&e=css');
-
-@font-face {
-  font-family: 'filson-pro';
-
-  src: url('https://use.typekit.net/af/c12453/0000000000000000000157bf/27/l?subset_id=2&fvd=n7&v=3') format('woff2'),
-    url('https://use.typekit.net/af/c12453/0000000000000000000157bf/27/d?subset_id=2&fvd=n7&v=3') format('woff'),
-    url('https://use.typekit.net/af/c12453/0000000000000000000157bf/27/a?subset_id=2&fvd=n7&v=3') format('opentype');
-
-  font-display: auto;
-
-  font-style: normal;
-
-  font-weight: 700;
-}
-
-@font-face {
-  font-family: 'filson-pro';
-
-  src: url('https://use.typekit.net/af/c37133/0000000000000000000157c1/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
-      format('woff2'),
-    url('https://use.typekit.net/af/c37133/0000000000000000000157c1/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
-      format('woff'),
-    url('https://use.typekit.net/af/c37133/0000000000000000000157c1/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3')
-      format('opentype');
-
-  font-display: auto;
-
-  font-style: normal;
-
-  font-weight: 300;
-}
-
-@font-face {
-  font-family: 'vista-slab';
-
-  src: url('https://use.typekit.net/af/c545b1/00000000000000003b9add0a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('woff2'),
-    url('https://use.typekit.net/af/c545b1/00000000000000003b9add0a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('woff'),
-    url('https://use.typekit.net/af/c545b1/00000000000000003b9add0a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('opentype');
-
-  font-display: auto;
-
-  font-style: normal;
-
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'roboto-mono';
-
-  src: url('https://use.typekit.net/af/d4fbe0/00000000000000003b9ade4b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('woff2'),
-    url('https://use.typekit.net/af/d4fbe0/00000000000000003b9ade4b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('woff'),
-    url('https://use.typekit.net/af/d4fbe0/00000000000000003b9ade4b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3')
-      format('opentype');
-
-  font-display: auto;
-
-  font-style: normal;
-
-  font-weight: 400;
-}
-
-.font-filson-pro {
-  font-family: 'filson-pro', sans-serif;
-}
-
-.font-vista-slab {
-  font-family: 'vista-slab', serif;
-}
-
-.font-roboto-mono {
-  font-family: 'roboto-mono', monospace;
-}
-
-.subnavigation {
-  &:hover > a {
-    border-style: solid;
-    color: #00e6e6;
-    border-color: #0AB4B4;
-    border-bottom-width: 3px;
-  }
-  &:hover .subnavigation-content {
-    display: flex;
-  }
-}
-
-.full-box.apply-py {
-  > div:first-of-type {
-    padding-top: 3rem;
-  }
-  > div:last-of-type {
-    padding-bottom: 3rem;
-  }
-}
-
-.footer {
-  p {
-    font-size: 1rem !important;
-  }
-  a {
-    color: #fff !important;
-  }
-}
-
-.markdown {
-  font-size: 1.25rem;
-  font-family: 'filson-pro', sans-serif;
-  &.h1-white > h1 {
-    color: #FFFFFF;
-  }
-  &.h2-white > h2 {
-    color: #FFFFFF;
-  }
-  &.h3-white > h3 {
-    color: #FFFFFF;
-  }
-  &.h4-white > h4 {
-    color: #FFFFFF;
-  }
-  &.h5-white > h5 {
-    color: #FFFFFF;
-  }
-  &.h1-black > h1 {
-    color: #000000;
-  }
-  &.h2-black > h2 {
-    color: #000000;
-  }
-  &.h3-black > h3 {
-    color: #000000;
-  }
-  &.h4-black > h4 {
-    color: #000000;
-  }
-  &.h5-black > h5 {
-    color: #000000;
-  }
-  &.h1-turquois > h1 {
-    color: #0AB4B4;
-  }
-  &.h2-turquois > h2 {
-    color: #0AB4B4;
-  }
-  &.h3-turquois > h3 {
-    color: #0AB4B4;
-  }
-  &.h4-turquois > h4 {
-    color: #0AB4B4;
-  }
-  &.h5-turquois > h5 {
-    color: #0AB4B4;
-  }
-  p {
-    a {
-      color: #0AB4B4;
-    }
-  }
-  ul {
-    li {
-      margin-bottom: 0.5rem;
-    }
-  }
-  .inline-markdown {
-    display: inline !important;
-  }
-}
-
-.google-map {
-  .infoBox {
-    p {
-      font-size: 1rem !important;
-    }
-  }
-}
-
-.recaptcha {
-  > div {
-    > div {
-      margin: 0 auto;
-    }
-  }
-}
-
-body,
-html {
-  font-family: 'filson-pro', sans-serif;
 }
 
 .sr-only {
@@ -4011,73 +3801,59 @@ html {
 }
 
 .object-contain {
-  -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .object-cover {
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .object-fill {
-  -o-object-fit: fill;
-     object-fit: fill;
+  object-fit: fill;
 }
 
 .object-none {
-  -o-object-fit: none;
-     object-fit: none;
+  object-fit: none;
 }
 
 .object-scale-down {
-  -o-object-fit: scale-down;
-     object-fit: scale-down;
+  object-fit: scale-down;
 }
 
 .object-bottom {
-  -o-object-position: bottom;
-     object-position: bottom;
+  object-position: bottom;
 }
 
 .object-center {
-  -o-object-position: center;
-     object-position: center;
+  object-position: center;
 }
 
 .object-left {
-  -o-object-position: left;
-     object-position: left;
+  object-position: left;
 }
 
 .object-left-bottom {
-  -o-object-position: left bottom;
-     object-position: left bottom;
+  object-position: left bottom;
 }
 
 .object-left-top {
-  -o-object-position: left top;
-     object-position: left top;
+  object-position: left top;
 }
 
 .object-right {
-  -o-object-position: right;
-     object-position: right;
+  object-position: right;
 }
 
 .object-right-bottom {
-  -o-object-position: right bottom;
-     object-position: right bottom;
+  object-position: right bottom;
 }
 
 .object-right-top {
-  -o-object-position: right top;
-     object-position: right top;
+  object-position: right top;
 }
 
 .object-top {
-  -o-object-position: top;
-     object-position: top;
+  object-position: top;
 }
 
 .opacity-0 {
@@ -7054,520 +6830,104 @@ html {
   padding-left: 1px;
 }
 
-.placeholder-white::-webkit-input-placeholder {
-  color: #FFFFFF;
-}
-
-.placeholder-white::-moz-placeholder {
-  color: #FFFFFF;
-}
-
-.placeholder-white:-ms-input-placeholder {
-  color: #FFFFFF;
-}
-
-.placeholder-white::-ms-input-placeholder {
-  color: #FFFFFF;
-}
-
 .placeholder-white::placeholder {
   color: #FFFFFF;
-}
-
-.placeholder-dirty-white::-webkit-input-placeholder {
-  color: #E4E3E9;
-}
-
-.placeholder-dirty-white::-moz-placeholder {
-  color: #E4E3E9;
-}
-
-.placeholder-dirty-white:-ms-input-placeholder {
-  color: #E4E3E9;
-}
-
-.placeholder-dirty-white::-ms-input-placeholder {
-  color: #E4E3E9;
 }
 
 .placeholder-dirty-white::placeholder {
   color: #E4E3E9;
 }
 
-.placeholder-blue-black::-webkit-input-placeholder {
-  color: #0B0E28;
-}
-
-.placeholder-blue-black::-moz-placeholder {
-  color: #0B0E28;
-}
-
-.placeholder-blue-black:-ms-input-placeholder {
-  color: #0B0E28;
-}
-
-.placeholder-blue-black::-ms-input-placeholder {
-  color: #0B0E28;
-}
-
 .placeholder-blue-black::placeholder {
   color: #0B0E28;
-}
-
-.placeholder-mid-grey::-webkit-input-placeholder {
-  color: #646569;
-}
-
-.placeholder-mid-grey::-moz-placeholder {
-  color: #646569;
-}
-
-.placeholder-mid-grey:-ms-input-placeholder {
-  color: #646569;
-}
-
-.placeholder-mid-grey::-ms-input-placeholder {
-  color: #646569;
 }
 
 .placeholder-mid-grey::placeholder {
   color: #646569;
 }
 
-.placeholder-light-grey::-webkit-input-placeholder {
-  color: #DCD9D6;
-}
-
-.placeholder-light-grey::-moz-placeholder {
-  color: #DCD9D6;
-}
-
-.placeholder-light-grey:-ms-input-placeholder {
-  color: #DCD9D6;
-}
-
-.placeholder-light-grey::-ms-input-placeholder {
-  color: #DCD9D6;
-}
-
 .placeholder-light-grey::placeholder {
   color: #DCD9D6;
-}
-
-.placeholder-ultralight-grey::-webkit-input-placeholder {
-  color: #F8F8FC;
-}
-
-.placeholder-ultralight-grey::-moz-placeholder {
-  color: #F8F8FC;
-}
-
-.placeholder-ultralight-grey:-ms-input-placeholder {
-  color: #F8F8FC;
-}
-
-.placeholder-ultralight-grey::-ms-input-placeholder {
-  color: #F8F8FC;
 }
 
 .placeholder-ultralight-grey::placeholder {
   color: #F8F8FC;
 }
 
-.placeholder-dark-blue::-webkit-input-placeholder {
-  color: #212A52;
-}
-
-.placeholder-dark-blue::-moz-placeholder {
-  color: #212A52;
-}
-
-.placeholder-dark-blue:-ms-input-placeholder {
-  color: #212A52;
-}
-
-.placeholder-dark-blue::-ms-input-placeholder {
-  color: #212A52;
-}
-
 .placeholder-dark-blue::placeholder {
   color: #212A52;
-}
-
-.placeholder-light-blue::-webkit-input-placeholder {
-  color: #ADD0DB;
-}
-
-.placeholder-light-blue::-moz-placeholder {
-  color: #ADD0DB;
-}
-
-.placeholder-light-blue:-ms-input-placeholder {
-  color: #ADD0DB;
-}
-
-.placeholder-light-blue::-ms-input-placeholder {
-  color: #ADD0DB;
 }
 
 .placeholder-light-blue::placeholder {
   color: #ADD0DB;
 }
 
-.placeholder-blue-grey::-webkit-input-placeholder {
-  color: #646569;
-}
-
-.placeholder-blue-grey::-moz-placeholder {
-  color: #646569;
-}
-
-.placeholder-blue-grey:-ms-input-placeholder {
-  color: #646569;
-}
-
-.placeholder-blue-grey::-ms-input-placeholder {
-  color: #646569;
-}
-
 .placeholder-blue-grey::placeholder {
   color: #646569;
-}
-
-.placeholder-turquois::-webkit-input-placeholder {
-  color: #0AB4B4;
-}
-
-.placeholder-turquois::-moz-placeholder {
-  color: #0AB4B4;
-}
-
-.placeholder-turquois:-ms-input-placeholder {
-  color: #0AB4B4;
-}
-
-.placeholder-turquois::-ms-input-placeholder {
-  color: #0AB4B4;
 }
 
 .placeholder-turquois::placeholder {
   color: #0AB4B4;
 }
 
-.placeholder-light-turquois::-webkit-input-placeholder {
-  color: #0ccbcb;
-}
-
-.placeholder-light-turquois::-moz-placeholder {
-  color: #0ccbcb;
-}
-
-.placeholder-light-turquois:-ms-input-placeholder {
-  color: #0ccbcb;
-}
-
-.placeholder-light-turquois::-ms-input-placeholder {
-  color: #0ccbcb;
-}
-
 .placeholder-light-turquois::placeholder {
   color: #0ccbcb;
-}
-
-.placeholder-ultralight-turquois::-webkit-input-placeholder {
-  color: #00e6e6;
-}
-
-.placeholder-ultralight-turquois::-moz-placeholder {
-  color: #00e6e6;
-}
-
-.placeholder-ultralight-turquois:-ms-input-placeholder {
-  color: #00e6e6;
-}
-
-.placeholder-ultralight-turquois::-ms-input-placeholder {
-  color: #00e6e6;
 }
 
 .placeholder-ultralight-turquois::placeholder {
   color: #00e6e6;
 }
 
-.placeholder-black::-webkit-input-placeholder {
-  color: #000000;
-}
-
-.placeholder-black::-moz-placeholder {
-  color: #000000;
-}
-
-.placeholder-black:-ms-input-placeholder {
-  color: #000000;
-}
-
-.placeholder-black::-ms-input-placeholder {
-  color: #000000;
-}
-
 .placeholder-black::placeholder {
   color: #000000;
-}
-
-.focus\:placeholder-white:focus::-webkit-input-placeholder {
-  color: #FFFFFF;
-}
-
-.focus\:placeholder-white:focus::-moz-placeholder {
-  color: #FFFFFF;
-}
-
-.focus\:placeholder-white:focus:-ms-input-placeholder {
-  color: #FFFFFF;
-}
-
-.focus\:placeholder-white:focus::-ms-input-placeholder {
-  color: #FFFFFF;
 }
 
 .focus\:placeholder-white:focus::placeholder {
   color: #FFFFFF;
 }
 
-.focus\:placeholder-dirty-white:focus::-webkit-input-placeholder {
-  color: #E4E3E9;
-}
-
-.focus\:placeholder-dirty-white:focus::-moz-placeholder {
-  color: #E4E3E9;
-}
-
-.focus\:placeholder-dirty-white:focus:-ms-input-placeholder {
-  color: #E4E3E9;
-}
-
-.focus\:placeholder-dirty-white:focus::-ms-input-placeholder {
-  color: #E4E3E9;
-}
-
 .focus\:placeholder-dirty-white:focus::placeholder {
   color: #E4E3E9;
-}
-
-.focus\:placeholder-blue-black:focus::-webkit-input-placeholder {
-  color: #0B0E28;
-}
-
-.focus\:placeholder-blue-black:focus::-moz-placeholder {
-  color: #0B0E28;
-}
-
-.focus\:placeholder-blue-black:focus:-ms-input-placeholder {
-  color: #0B0E28;
-}
-
-.focus\:placeholder-blue-black:focus::-ms-input-placeholder {
-  color: #0B0E28;
 }
 
 .focus\:placeholder-blue-black:focus::placeholder {
   color: #0B0E28;
 }
 
-.focus\:placeholder-mid-grey:focus::-webkit-input-placeholder {
-  color: #646569;
-}
-
-.focus\:placeholder-mid-grey:focus::-moz-placeholder {
-  color: #646569;
-}
-
-.focus\:placeholder-mid-grey:focus:-ms-input-placeholder {
-  color: #646569;
-}
-
-.focus\:placeholder-mid-grey:focus::-ms-input-placeholder {
-  color: #646569;
-}
-
 .focus\:placeholder-mid-grey:focus::placeholder {
   color: #646569;
-}
-
-.focus\:placeholder-light-grey:focus::-webkit-input-placeholder {
-  color: #DCD9D6;
-}
-
-.focus\:placeholder-light-grey:focus::-moz-placeholder {
-  color: #DCD9D6;
-}
-
-.focus\:placeholder-light-grey:focus:-ms-input-placeholder {
-  color: #DCD9D6;
-}
-
-.focus\:placeholder-light-grey:focus::-ms-input-placeholder {
-  color: #DCD9D6;
 }
 
 .focus\:placeholder-light-grey:focus::placeholder {
   color: #DCD9D6;
 }
 
-.focus\:placeholder-ultralight-grey:focus::-webkit-input-placeholder {
-  color: #F8F8FC;
-}
-
-.focus\:placeholder-ultralight-grey:focus::-moz-placeholder {
-  color: #F8F8FC;
-}
-
-.focus\:placeholder-ultralight-grey:focus:-ms-input-placeholder {
-  color: #F8F8FC;
-}
-
-.focus\:placeholder-ultralight-grey:focus::-ms-input-placeholder {
-  color: #F8F8FC;
-}
-
 .focus\:placeholder-ultralight-grey:focus::placeholder {
   color: #F8F8FC;
-}
-
-.focus\:placeholder-dark-blue:focus::-webkit-input-placeholder {
-  color: #212A52;
-}
-
-.focus\:placeholder-dark-blue:focus::-moz-placeholder {
-  color: #212A52;
-}
-
-.focus\:placeholder-dark-blue:focus:-ms-input-placeholder {
-  color: #212A52;
-}
-
-.focus\:placeholder-dark-blue:focus::-ms-input-placeholder {
-  color: #212A52;
 }
 
 .focus\:placeholder-dark-blue:focus::placeholder {
   color: #212A52;
 }
 
-.focus\:placeholder-light-blue:focus::-webkit-input-placeholder {
-  color: #ADD0DB;
-}
-
-.focus\:placeholder-light-blue:focus::-moz-placeholder {
-  color: #ADD0DB;
-}
-
-.focus\:placeholder-light-blue:focus:-ms-input-placeholder {
-  color: #ADD0DB;
-}
-
-.focus\:placeholder-light-blue:focus::-ms-input-placeholder {
-  color: #ADD0DB;
-}
-
 .focus\:placeholder-light-blue:focus::placeholder {
   color: #ADD0DB;
-}
-
-.focus\:placeholder-blue-grey:focus::-webkit-input-placeholder {
-  color: #646569;
-}
-
-.focus\:placeholder-blue-grey:focus::-moz-placeholder {
-  color: #646569;
-}
-
-.focus\:placeholder-blue-grey:focus:-ms-input-placeholder {
-  color: #646569;
-}
-
-.focus\:placeholder-blue-grey:focus::-ms-input-placeholder {
-  color: #646569;
 }
 
 .focus\:placeholder-blue-grey:focus::placeholder {
   color: #646569;
 }
 
-.focus\:placeholder-turquois:focus::-webkit-input-placeholder {
-  color: #0AB4B4;
-}
-
-.focus\:placeholder-turquois:focus::-moz-placeholder {
-  color: #0AB4B4;
-}
-
-.focus\:placeholder-turquois:focus:-ms-input-placeholder {
-  color: #0AB4B4;
-}
-
-.focus\:placeholder-turquois:focus::-ms-input-placeholder {
-  color: #0AB4B4;
-}
-
 .focus\:placeholder-turquois:focus::placeholder {
   color: #0AB4B4;
-}
-
-.focus\:placeholder-light-turquois:focus::-webkit-input-placeholder {
-  color: #0ccbcb;
-}
-
-.focus\:placeholder-light-turquois:focus::-moz-placeholder {
-  color: #0ccbcb;
-}
-
-.focus\:placeholder-light-turquois:focus:-ms-input-placeholder {
-  color: #0ccbcb;
-}
-
-.focus\:placeholder-light-turquois:focus::-ms-input-placeholder {
-  color: #0ccbcb;
 }
 
 .focus\:placeholder-light-turquois:focus::placeholder {
   color: #0ccbcb;
 }
 
-.focus\:placeholder-ultralight-turquois:focus::-webkit-input-placeholder {
-  color: #00e6e6;
-}
-
-.focus\:placeholder-ultralight-turquois:focus::-moz-placeholder {
-  color: #00e6e6;
-}
-
-.focus\:placeholder-ultralight-turquois:focus:-ms-input-placeholder {
-  color: #00e6e6;
-}
-
-.focus\:placeholder-ultralight-turquois:focus::-ms-input-placeholder {
-  color: #00e6e6;
-}
-
 .focus\:placeholder-ultralight-turquois:focus::placeholder {
   color: #00e6e6;
-}
-
-.focus\:placeholder-black:focus::-webkit-input-placeholder {
-  color: #000000;
-}
-
-.focus\:placeholder-black:focus::-moz-placeholder {
-  color: #000000;
-}
-
-.focus\:placeholder-black:focus:-ms-input-placeholder {
-  color: #000000;
-}
-
-.focus\:placeholder-black:focus::-ms-input-placeholder {
-  color: #000000;
 }
 
 .focus\:placeholder-black:focus::placeholder {
@@ -8237,29 +7597,21 @@ html {
 
 .select-none {
   -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
           user-select: none;
 }
 
 .select-text {
   -webkit-user-select: text;
-     -moz-user-select: text;
-      -ms-user-select: text;
           user-select: text;
 }
 
 .select-all {
   -webkit-user-select: all;
-     -moz-user-select: all;
-      -ms-user-select: all;
           user-select: all;
 }
 
 .select-auto {
   -webkit-user-select: auto;
-     -moz-user-select: auto;
-      -ms-user-select: auto;
           user-select: auto;
 }
 
@@ -8663,116 +8015,97 @@ html {
 
 .col-gap-0 {
   grid-column-gap: 0;
-  -moz-column-gap: 0;
-       column-gap: 0;
+  column-gap: 0;
 }
 
 .col-gap-1 {
   grid-column-gap: 0.25rem;
-  -moz-column-gap: 0.25rem;
-       column-gap: 0.25rem;
+  column-gap: 0.25rem;
 }
 
 .col-gap-2 {
   grid-column-gap: 0.5rem;
-  -moz-column-gap: 0.5rem;
-       column-gap: 0.5rem;
+  column-gap: 0.5rem;
 }
 
 .col-gap-3 {
   grid-column-gap: 0.75rem;
-  -moz-column-gap: 0.75rem;
-       column-gap: 0.75rem;
+  column-gap: 0.75rem;
 }
 
 .col-gap-4 {
   grid-column-gap: 1rem;
-  -moz-column-gap: 1rem;
-       column-gap: 1rem;
+  column-gap: 1rem;
 }
 
 .col-gap-5 {
   grid-column-gap: 1.25rem;
-  -moz-column-gap: 1.25rem;
-       column-gap: 1.25rem;
+  column-gap: 1.25rem;
 }
 
 .col-gap-6 {
   grid-column-gap: 1.5rem;
-  -moz-column-gap: 1.5rem;
-       column-gap: 1.5rem;
+  column-gap: 1.5rem;
 }
 
 .col-gap-8 {
   grid-column-gap: 2rem;
-  -moz-column-gap: 2rem;
-       column-gap: 2rem;
+  column-gap: 2rem;
 }
 
 .col-gap-10 {
   grid-column-gap: 2.5rem;
-  -moz-column-gap: 2.5rem;
-       column-gap: 2.5rem;
+  column-gap: 2.5rem;
 }
 
 .col-gap-12 {
   grid-column-gap: 3rem;
-  -moz-column-gap: 3rem;
-       column-gap: 3rem;
+  column-gap: 3rem;
 }
 
 .col-gap-16 {
   grid-column-gap: 4rem;
-  -moz-column-gap: 4rem;
-       column-gap: 4rem;
+  column-gap: 4rem;
 }
 
 .col-gap-20 {
   grid-column-gap: 5rem;
-  -moz-column-gap: 5rem;
-       column-gap: 5rem;
+  column-gap: 5rem;
 }
 
 .col-gap-24 {
   grid-column-gap: 6rem;
-  -moz-column-gap: 6rem;
-       column-gap: 6rem;
+  column-gap: 6rem;
 }
 
 .col-gap-32 {
   grid-column-gap: 8rem;
-  -moz-column-gap: 8rem;
-       column-gap: 8rem;
+  column-gap: 8rem;
 }
 
 .col-gap-40 {
   grid-column-gap: 10rem;
-  -moz-column-gap: 10rem;
-       column-gap: 10rem;
+  column-gap: 10rem;
 }
 
 .col-gap-48 {
   grid-column-gap: 12rem;
-  -moz-column-gap: 12rem;
-       column-gap: 12rem;
+  column-gap: 12rem;
 }
 
 .col-gap-56 {
   grid-column-gap: 14rem;
-  -moz-column-gap: 14rem;
-       column-gap: 14rem;
+  column-gap: 14rem;
 }
 
 .col-gap-64 {
   grid-column-gap: 16rem;
-  -moz-column-gap: 16rem;
-       column-gap: 16rem;
+  column-gap: 16rem;
 }
 
 .col-gap-px {
   grid-column-gap: 1px;
-  -moz-column-gap: 1px;
-       column-gap: 1px;
+  column-gap: 1px;
 }
 
 .row-gap-0 {
@@ -14175,73 +13508,59 @@ html {
   }
 
   .sm\:object-contain {
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
 
   .sm\:object-cover {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 
   .sm\:object-fill {
-    -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .sm\:object-none {
-    -o-object-fit: none;
-       object-fit: none;
+    object-fit: none;
   }
 
   .sm\:object-scale-down {
-    -o-object-fit: scale-down;
-       object-fit: scale-down;
+    object-fit: scale-down;
   }
 
   .sm\:object-bottom {
-    -o-object-position: bottom;
-       object-position: bottom;
+    object-position: bottom;
   }
 
   .sm\:object-center {
-    -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
 
   .sm\:object-left {
-    -o-object-position: left;
-       object-position: left;
+    object-position: left;
   }
 
   .sm\:object-left-bottom {
-    -o-object-position: left bottom;
-       object-position: left bottom;
+    object-position: left bottom;
   }
 
   .sm\:object-left-top {
-    -o-object-position: left top;
-       object-position: left top;
+    object-position: left top;
   }
 
   .sm\:object-right {
-    -o-object-position: right;
-       object-position: right;
+    object-position: right;
   }
 
   .sm\:object-right-bottom {
-    -o-object-position: right bottom;
-       object-position: right bottom;
+    object-position: right bottom;
   }
 
   .sm\:object-right-top {
-    -o-object-position: right top;
-       object-position: right top;
+    object-position: right top;
   }
 
   .sm\:object-top {
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 
   .sm\:opacity-0 {
@@ -17218,520 +16537,104 @@ html {
     padding-left: 1px;
   }
 
-  .sm\:placeholder-white::-webkit-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .sm\:placeholder-white::-moz-placeholder {
-    color: #FFFFFF;
-  }
-
-  .sm\:placeholder-white:-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .sm\:placeholder-white::-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
   .sm\:placeholder-white::placeholder {
     color: #FFFFFF;
-  }
-
-  .sm\:placeholder-dirty-white::-webkit-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .sm\:placeholder-dirty-white::-moz-placeholder {
-    color: #E4E3E9;
-  }
-
-  .sm\:placeholder-dirty-white:-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .sm\:placeholder-dirty-white::-ms-input-placeholder {
-    color: #E4E3E9;
   }
 
   .sm\:placeholder-dirty-white::placeholder {
     color: #E4E3E9;
   }
 
-  .sm\:placeholder-blue-black::-webkit-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .sm\:placeholder-blue-black::-moz-placeholder {
-    color: #0B0E28;
-  }
-
-  .sm\:placeholder-blue-black:-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .sm\:placeholder-blue-black::-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
   .sm\:placeholder-blue-black::placeholder {
     color: #0B0E28;
-  }
-
-  .sm\:placeholder-mid-grey::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .sm\:placeholder-mid-grey::-moz-placeholder {
-    color: #646569;
-  }
-
-  .sm\:placeholder-mid-grey:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .sm\:placeholder-mid-grey::-ms-input-placeholder {
-    color: #646569;
   }
 
   .sm\:placeholder-mid-grey::placeholder {
     color: #646569;
   }
 
-  .sm\:placeholder-light-grey::-webkit-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .sm\:placeholder-light-grey::-moz-placeholder {
-    color: #DCD9D6;
-  }
-
-  .sm\:placeholder-light-grey:-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .sm\:placeholder-light-grey::-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
   .sm\:placeholder-light-grey::placeholder {
     color: #DCD9D6;
-  }
-
-  .sm\:placeholder-ultralight-grey::-webkit-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .sm\:placeholder-ultralight-grey::-moz-placeholder {
-    color: #F8F8FC;
-  }
-
-  .sm\:placeholder-ultralight-grey:-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .sm\:placeholder-ultralight-grey::-ms-input-placeholder {
-    color: #F8F8FC;
   }
 
   .sm\:placeholder-ultralight-grey::placeholder {
     color: #F8F8FC;
   }
 
-  .sm\:placeholder-dark-blue::-webkit-input-placeholder {
-    color: #212A52;
-  }
-
-  .sm\:placeholder-dark-blue::-moz-placeholder {
-    color: #212A52;
-  }
-
-  .sm\:placeholder-dark-blue:-ms-input-placeholder {
-    color: #212A52;
-  }
-
-  .sm\:placeholder-dark-blue::-ms-input-placeholder {
-    color: #212A52;
-  }
-
   .sm\:placeholder-dark-blue::placeholder {
     color: #212A52;
-  }
-
-  .sm\:placeholder-light-blue::-webkit-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .sm\:placeholder-light-blue::-moz-placeholder {
-    color: #ADD0DB;
-  }
-
-  .sm\:placeholder-light-blue:-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .sm\:placeholder-light-blue::-ms-input-placeholder {
-    color: #ADD0DB;
   }
 
   .sm\:placeholder-light-blue::placeholder {
     color: #ADD0DB;
   }
 
-  .sm\:placeholder-blue-grey::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .sm\:placeholder-blue-grey::-moz-placeholder {
-    color: #646569;
-  }
-
-  .sm\:placeholder-blue-grey:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .sm\:placeholder-blue-grey::-ms-input-placeholder {
-    color: #646569;
-  }
-
   .sm\:placeholder-blue-grey::placeholder {
     color: #646569;
-  }
-
-  .sm\:placeholder-turquois::-webkit-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .sm\:placeholder-turquois::-moz-placeholder {
-    color: #0AB4B4;
-  }
-
-  .sm\:placeholder-turquois:-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .sm\:placeholder-turquois::-ms-input-placeholder {
-    color: #0AB4B4;
   }
 
   .sm\:placeholder-turquois::placeholder {
     color: #0AB4B4;
   }
 
-  .sm\:placeholder-light-turquois::-webkit-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .sm\:placeholder-light-turquois::-moz-placeholder {
-    color: #0ccbcb;
-  }
-
-  .sm\:placeholder-light-turquois:-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .sm\:placeholder-light-turquois::-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
   .sm\:placeholder-light-turquois::placeholder {
     color: #0ccbcb;
-  }
-
-  .sm\:placeholder-ultralight-turquois::-webkit-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .sm\:placeholder-ultralight-turquois::-moz-placeholder {
-    color: #00e6e6;
-  }
-
-  .sm\:placeholder-ultralight-turquois:-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .sm\:placeholder-ultralight-turquois::-ms-input-placeholder {
-    color: #00e6e6;
   }
 
   .sm\:placeholder-ultralight-turquois::placeholder {
     color: #00e6e6;
   }
 
-  .sm\:placeholder-black::-webkit-input-placeholder {
-    color: #000000;
-  }
-
-  .sm\:placeholder-black::-moz-placeholder {
-    color: #000000;
-  }
-
-  .sm\:placeholder-black:-ms-input-placeholder {
-    color: #000000;
-  }
-
-  .sm\:placeholder-black::-ms-input-placeholder {
-    color: #000000;
-  }
-
   .sm\:placeholder-black::placeholder {
     color: #000000;
-  }
-
-  .sm\:focus\:placeholder-white:focus::-webkit-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .sm\:focus\:placeholder-white:focus::-moz-placeholder {
-    color: #FFFFFF;
-  }
-
-  .sm\:focus\:placeholder-white:focus:-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .sm\:focus\:placeholder-white:focus::-ms-input-placeholder {
-    color: #FFFFFF;
   }
 
   .sm\:focus\:placeholder-white:focus::placeholder {
     color: #FFFFFF;
   }
 
-  .sm\:focus\:placeholder-dirty-white:focus::-webkit-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .sm\:focus\:placeholder-dirty-white:focus::-moz-placeholder {
-    color: #E4E3E9;
-  }
-
-  .sm\:focus\:placeholder-dirty-white:focus:-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .sm\:focus\:placeholder-dirty-white:focus::-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
   .sm\:focus\:placeholder-dirty-white:focus::placeholder {
     color: #E4E3E9;
-  }
-
-  .sm\:focus\:placeholder-blue-black:focus::-webkit-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .sm\:focus\:placeholder-blue-black:focus::-moz-placeholder {
-    color: #0B0E28;
-  }
-
-  .sm\:focus\:placeholder-blue-black:focus:-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .sm\:focus\:placeholder-blue-black:focus::-ms-input-placeholder {
-    color: #0B0E28;
   }
 
   .sm\:focus\:placeholder-blue-black:focus::placeholder {
     color: #0B0E28;
   }
 
-  .sm\:focus\:placeholder-mid-grey:focus::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .sm\:focus\:placeholder-mid-grey:focus::-moz-placeholder {
-    color: #646569;
-  }
-
-  .sm\:focus\:placeholder-mid-grey:focus:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .sm\:focus\:placeholder-mid-grey:focus::-ms-input-placeholder {
-    color: #646569;
-  }
-
   .sm\:focus\:placeholder-mid-grey:focus::placeholder {
     color: #646569;
-  }
-
-  .sm\:focus\:placeholder-light-grey:focus::-webkit-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .sm\:focus\:placeholder-light-grey:focus::-moz-placeholder {
-    color: #DCD9D6;
-  }
-
-  .sm\:focus\:placeholder-light-grey:focus:-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .sm\:focus\:placeholder-light-grey:focus::-ms-input-placeholder {
-    color: #DCD9D6;
   }
 
   .sm\:focus\:placeholder-light-grey:focus::placeholder {
     color: #DCD9D6;
   }
 
-  .sm\:focus\:placeholder-ultralight-grey:focus::-webkit-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .sm\:focus\:placeholder-ultralight-grey:focus::-moz-placeholder {
-    color: #F8F8FC;
-  }
-
-  .sm\:focus\:placeholder-ultralight-grey:focus:-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .sm\:focus\:placeholder-ultralight-grey:focus::-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
   .sm\:focus\:placeholder-ultralight-grey:focus::placeholder {
     color: #F8F8FC;
-  }
-
-  .sm\:focus\:placeholder-dark-blue:focus::-webkit-input-placeholder {
-    color: #212A52;
-  }
-
-  .sm\:focus\:placeholder-dark-blue:focus::-moz-placeholder {
-    color: #212A52;
-  }
-
-  .sm\:focus\:placeholder-dark-blue:focus:-ms-input-placeholder {
-    color: #212A52;
-  }
-
-  .sm\:focus\:placeholder-dark-blue:focus::-ms-input-placeholder {
-    color: #212A52;
   }
 
   .sm\:focus\:placeholder-dark-blue:focus::placeholder {
     color: #212A52;
   }
 
-  .sm\:focus\:placeholder-light-blue:focus::-webkit-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .sm\:focus\:placeholder-light-blue:focus::-moz-placeholder {
-    color: #ADD0DB;
-  }
-
-  .sm\:focus\:placeholder-light-blue:focus:-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .sm\:focus\:placeholder-light-blue:focus::-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
   .sm\:focus\:placeholder-light-blue:focus::placeholder {
     color: #ADD0DB;
-  }
-
-  .sm\:focus\:placeholder-blue-grey:focus::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .sm\:focus\:placeholder-blue-grey:focus::-moz-placeholder {
-    color: #646569;
-  }
-
-  .sm\:focus\:placeholder-blue-grey:focus:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .sm\:focus\:placeholder-blue-grey:focus::-ms-input-placeholder {
-    color: #646569;
   }
 
   .sm\:focus\:placeholder-blue-grey:focus::placeholder {
     color: #646569;
   }
 
-  .sm\:focus\:placeholder-turquois:focus::-webkit-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .sm\:focus\:placeholder-turquois:focus::-moz-placeholder {
-    color: #0AB4B4;
-  }
-
-  .sm\:focus\:placeholder-turquois:focus:-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .sm\:focus\:placeholder-turquois:focus::-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
   .sm\:focus\:placeholder-turquois:focus::placeholder {
     color: #0AB4B4;
-  }
-
-  .sm\:focus\:placeholder-light-turquois:focus::-webkit-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .sm\:focus\:placeholder-light-turquois:focus::-moz-placeholder {
-    color: #0ccbcb;
-  }
-
-  .sm\:focus\:placeholder-light-turquois:focus:-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .sm\:focus\:placeholder-light-turquois:focus::-ms-input-placeholder {
-    color: #0ccbcb;
   }
 
   .sm\:focus\:placeholder-light-turquois:focus::placeholder {
     color: #0ccbcb;
   }
 
-  .sm\:focus\:placeholder-ultralight-turquois:focus::-webkit-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .sm\:focus\:placeholder-ultralight-turquois:focus::-moz-placeholder {
-    color: #00e6e6;
-  }
-
-  .sm\:focus\:placeholder-ultralight-turquois:focus:-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .sm\:focus\:placeholder-ultralight-turquois:focus::-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
   .sm\:focus\:placeholder-ultralight-turquois:focus::placeholder {
     color: #00e6e6;
-  }
-
-  .sm\:focus\:placeholder-black:focus::-webkit-input-placeholder {
-    color: #000000;
-  }
-
-  .sm\:focus\:placeholder-black:focus::-moz-placeholder {
-    color: #000000;
-  }
-
-  .sm\:focus\:placeholder-black:focus:-ms-input-placeholder {
-    color: #000000;
-  }
-
-  .sm\:focus\:placeholder-black:focus::-ms-input-placeholder {
-    color: #000000;
   }
 
   .sm\:focus\:placeholder-black:focus::placeholder {
@@ -18401,29 +17304,21 @@ html {
 
   .sm\:select-none {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
 
   .sm\:select-text {
     -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
             user-select: text;
   }
 
   .sm\:select-all {
     -webkit-user-select: all;
-       -moz-user-select: all;
-        -ms-user-select: all;
             user-select: all;
   }
 
   .sm\:select-auto {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-        -ms-user-select: auto;
             user-select: auto;
   }
 
@@ -18827,116 +17722,97 @@ html {
 
   .sm\:col-gap-0 {
     grid-column-gap: 0;
-    -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
   }
 
   .sm\:col-gap-1 {
     grid-column-gap: 0.25rem;
-    -moz-column-gap: 0.25rem;
-         column-gap: 0.25rem;
+    column-gap: 0.25rem;
   }
 
   .sm\:col-gap-2 {
     grid-column-gap: 0.5rem;
-    -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
+    column-gap: 0.5rem;
   }
 
   .sm\:col-gap-3 {
     grid-column-gap: 0.75rem;
-    -moz-column-gap: 0.75rem;
-         column-gap: 0.75rem;
+    column-gap: 0.75rem;
   }
 
   .sm\:col-gap-4 {
     grid-column-gap: 1rem;
-    -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
   }
 
   .sm\:col-gap-5 {
     grid-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-         column-gap: 1.25rem;
+    column-gap: 1.25rem;
   }
 
   .sm\:col-gap-6 {
     grid-column-gap: 1.5rem;
-    -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .sm\:col-gap-8 {
     grid-column-gap: 2rem;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-gap: 2rem;
   }
 
   .sm\:col-gap-10 {
     grid-column-gap: 2.5rem;
-    -moz-column-gap: 2.5rem;
-         column-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
 
   .sm\:col-gap-12 {
     grid-column-gap: 3rem;
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
   }
 
   .sm\:col-gap-16 {
     grid-column-gap: 4rem;
-    -moz-column-gap: 4rem;
-         column-gap: 4rem;
+    column-gap: 4rem;
   }
 
   .sm\:col-gap-20 {
     grid-column-gap: 5rem;
-    -moz-column-gap: 5rem;
-         column-gap: 5rem;
+    column-gap: 5rem;
   }
 
   .sm\:col-gap-24 {
     grid-column-gap: 6rem;
-    -moz-column-gap: 6rem;
-         column-gap: 6rem;
+    column-gap: 6rem;
   }
 
   .sm\:col-gap-32 {
     grid-column-gap: 8rem;
-    -moz-column-gap: 8rem;
-         column-gap: 8rem;
+    column-gap: 8rem;
   }
 
   .sm\:col-gap-40 {
     grid-column-gap: 10rem;
-    -moz-column-gap: 10rem;
-         column-gap: 10rem;
+    column-gap: 10rem;
   }
 
   .sm\:col-gap-48 {
     grid-column-gap: 12rem;
-    -moz-column-gap: 12rem;
-         column-gap: 12rem;
+    column-gap: 12rem;
   }
 
   .sm\:col-gap-56 {
     grid-column-gap: 14rem;
-    -moz-column-gap: 14rem;
-         column-gap: 14rem;
+    column-gap: 14rem;
   }
 
   .sm\:col-gap-64 {
     grid-column-gap: 16rem;
-    -moz-column-gap: 16rem;
-         column-gap: 16rem;
+    column-gap: 16rem;
   }
 
   .sm\:col-gap-px {
     grid-column-gap: 1px;
-    -moz-column-gap: 1px;
-         column-gap: 1px;
+    column-gap: 1px;
   }
 
   .sm\:row-gap-0 {
@@ -24336,73 +23212,59 @@ html {
   }
 
   .md\:object-contain {
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
 
   .md\:object-cover {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 
   .md\:object-fill {
-    -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .md\:object-none {
-    -o-object-fit: none;
-       object-fit: none;
+    object-fit: none;
   }
 
   .md\:object-scale-down {
-    -o-object-fit: scale-down;
-       object-fit: scale-down;
+    object-fit: scale-down;
   }
 
   .md\:object-bottom {
-    -o-object-position: bottom;
-       object-position: bottom;
+    object-position: bottom;
   }
 
   .md\:object-center {
-    -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
 
   .md\:object-left {
-    -o-object-position: left;
-       object-position: left;
+    object-position: left;
   }
 
   .md\:object-left-bottom {
-    -o-object-position: left bottom;
-       object-position: left bottom;
+    object-position: left bottom;
   }
 
   .md\:object-left-top {
-    -o-object-position: left top;
-       object-position: left top;
+    object-position: left top;
   }
 
   .md\:object-right {
-    -o-object-position: right;
-       object-position: right;
+    object-position: right;
   }
 
   .md\:object-right-bottom {
-    -o-object-position: right bottom;
-       object-position: right bottom;
+    object-position: right bottom;
   }
 
   .md\:object-right-top {
-    -o-object-position: right top;
-       object-position: right top;
+    object-position: right top;
   }
 
   .md\:object-top {
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 
   .md\:opacity-0 {
@@ -27379,520 +26241,104 @@ html {
     padding-left: 1px;
   }
 
-  .md\:placeholder-white::-webkit-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .md\:placeholder-white::-moz-placeholder {
-    color: #FFFFFF;
-  }
-
-  .md\:placeholder-white:-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .md\:placeholder-white::-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
   .md\:placeholder-white::placeholder {
     color: #FFFFFF;
-  }
-
-  .md\:placeholder-dirty-white::-webkit-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .md\:placeholder-dirty-white::-moz-placeholder {
-    color: #E4E3E9;
-  }
-
-  .md\:placeholder-dirty-white:-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .md\:placeholder-dirty-white::-ms-input-placeholder {
-    color: #E4E3E9;
   }
 
   .md\:placeholder-dirty-white::placeholder {
     color: #E4E3E9;
   }
 
-  .md\:placeholder-blue-black::-webkit-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .md\:placeholder-blue-black::-moz-placeholder {
-    color: #0B0E28;
-  }
-
-  .md\:placeholder-blue-black:-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .md\:placeholder-blue-black::-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
   .md\:placeholder-blue-black::placeholder {
     color: #0B0E28;
-  }
-
-  .md\:placeholder-mid-grey::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .md\:placeholder-mid-grey::-moz-placeholder {
-    color: #646569;
-  }
-
-  .md\:placeholder-mid-grey:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .md\:placeholder-mid-grey::-ms-input-placeholder {
-    color: #646569;
   }
 
   .md\:placeholder-mid-grey::placeholder {
     color: #646569;
   }
 
-  .md\:placeholder-light-grey::-webkit-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .md\:placeholder-light-grey::-moz-placeholder {
-    color: #DCD9D6;
-  }
-
-  .md\:placeholder-light-grey:-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .md\:placeholder-light-grey::-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
   .md\:placeholder-light-grey::placeholder {
     color: #DCD9D6;
-  }
-
-  .md\:placeholder-ultralight-grey::-webkit-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .md\:placeholder-ultralight-grey::-moz-placeholder {
-    color: #F8F8FC;
-  }
-
-  .md\:placeholder-ultralight-grey:-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .md\:placeholder-ultralight-grey::-ms-input-placeholder {
-    color: #F8F8FC;
   }
 
   .md\:placeholder-ultralight-grey::placeholder {
     color: #F8F8FC;
   }
 
-  .md\:placeholder-dark-blue::-webkit-input-placeholder {
-    color: #212A52;
-  }
-
-  .md\:placeholder-dark-blue::-moz-placeholder {
-    color: #212A52;
-  }
-
-  .md\:placeholder-dark-blue:-ms-input-placeholder {
-    color: #212A52;
-  }
-
-  .md\:placeholder-dark-blue::-ms-input-placeholder {
-    color: #212A52;
-  }
-
   .md\:placeholder-dark-blue::placeholder {
     color: #212A52;
-  }
-
-  .md\:placeholder-light-blue::-webkit-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .md\:placeholder-light-blue::-moz-placeholder {
-    color: #ADD0DB;
-  }
-
-  .md\:placeholder-light-blue:-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .md\:placeholder-light-blue::-ms-input-placeholder {
-    color: #ADD0DB;
   }
 
   .md\:placeholder-light-blue::placeholder {
     color: #ADD0DB;
   }
 
-  .md\:placeholder-blue-grey::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .md\:placeholder-blue-grey::-moz-placeholder {
-    color: #646569;
-  }
-
-  .md\:placeholder-blue-grey:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .md\:placeholder-blue-grey::-ms-input-placeholder {
-    color: #646569;
-  }
-
   .md\:placeholder-blue-grey::placeholder {
     color: #646569;
-  }
-
-  .md\:placeholder-turquois::-webkit-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .md\:placeholder-turquois::-moz-placeholder {
-    color: #0AB4B4;
-  }
-
-  .md\:placeholder-turquois:-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .md\:placeholder-turquois::-ms-input-placeholder {
-    color: #0AB4B4;
   }
 
   .md\:placeholder-turquois::placeholder {
     color: #0AB4B4;
   }
 
-  .md\:placeholder-light-turquois::-webkit-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .md\:placeholder-light-turquois::-moz-placeholder {
-    color: #0ccbcb;
-  }
-
-  .md\:placeholder-light-turquois:-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .md\:placeholder-light-turquois::-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
   .md\:placeholder-light-turquois::placeholder {
     color: #0ccbcb;
-  }
-
-  .md\:placeholder-ultralight-turquois::-webkit-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .md\:placeholder-ultralight-turquois::-moz-placeholder {
-    color: #00e6e6;
-  }
-
-  .md\:placeholder-ultralight-turquois:-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .md\:placeholder-ultralight-turquois::-ms-input-placeholder {
-    color: #00e6e6;
   }
 
   .md\:placeholder-ultralight-turquois::placeholder {
     color: #00e6e6;
   }
 
-  .md\:placeholder-black::-webkit-input-placeholder {
-    color: #000000;
-  }
-
-  .md\:placeholder-black::-moz-placeholder {
-    color: #000000;
-  }
-
-  .md\:placeholder-black:-ms-input-placeholder {
-    color: #000000;
-  }
-
-  .md\:placeholder-black::-ms-input-placeholder {
-    color: #000000;
-  }
-
   .md\:placeholder-black::placeholder {
     color: #000000;
-  }
-
-  .md\:focus\:placeholder-white:focus::-webkit-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .md\:focus\:placeholder-white:focus::-moz-placeholder {
-    color: #FFFFFF;
-  }
-
-  .md\:focus\:placeholder-white:focus:-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .md\:focus\:placeholder-white:focus::-ms-input-placeholder {
-    color: #FFFFFF;
   }
 
   .md\:focus\:placeholder-white:focus::placeholder {
     color: #FFFFFF;
   }
 
-  .md\:focus\:placeholder-dirty-white:focus::-webkit-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .md\:focus\:placeholder-dirty-white:focus::-moz-placeholder {
-    color: #E4E3E9;
-  }
-
-  .md\:focus\:placeholder-dirty-white:focus:-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .md\:focus\:placeholder-dirty-white:focus::-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
   .md\:focus\:placeholder-dirty-white:focus::placeholder {
     color: #E4E3E9;
-  }
-
-  .md\:focus\:placeholder-blue-black:focus::-webkit-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .md\:focus\:placeholder-blue-black:focus::-moz-placeholder {
-    color: #0B0E28;
-  }
-
-  .md\:focus\:placeholder-blue-black:focus:-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .md\:focus\:placeholder-blue-black:focus::-ms-input-placeholder {
-    color: #0B0E28;
   }
 
   .md\:focus\:placeholder-blue-black:focus::placeholder {
     color: #0B0E28;
   }
 
-  .md\:focus\:placeholder-mid-grey:focus::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .md\:focus\:placeholder-mid-grey:focus::-moz-placeholder {
-    color: #646569;
-  }
-
-  .md\:focus\:placeholder-mid-grey:focus:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .md\:focus\:placeholder-mid-grey:focus::-ms-input-placeholder {
-    color: #646569;
-  }
-
   .md\:focus\:placeholder-mid-grey:focus::placeholder {
     color: #646569;
-  }
-
-  .md\:focus\:placeholder-light-grey:focus::-webkit-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .md\:focus\:placeholder-light-grey:focus::-moz-placeholder {
-    color: #DCD9D6;
-  }
-
-  .md\:focus\:placeholder-light-grey:focus:-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .md\:focus\:placeholder-light-grey:focus::-ms-input-placeholder {
-    color: #DCD9D6;
   }
 
   .md\:focus\:placeholder-light-grey:focus::placeholder {
     color: #DCD9D6;
   }
 
-  .md\:focus\:placeholder-ultralight-grey:focus::-webkit-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .md\:focus\:placeholder-ultralight-grey:focus::-moz-placeholder {
-    color: #F8F8FC;
-  }
-
-  .md\:focus\:placeholder-ultralight-grey:focus:-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .md\:focus\:placeholder-ultralight-grey:focus::-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
   .md\:focus\:placeholder-ultralight-grey:focus::placeholder {
     color: #F8F8FC;
-  }
-
-  .md\:focus\:placeholder-dark-blue:focus::-webkit-input-placeholder {
-    color: #212A52;
-  }
-
-  .md\:focus\:placeholder-dark-blue:focus::-moz-placeholder {
-    color: #212A52;
-  }
-
-  .md\:focus\:placeholder-dark-blue:focus:-ms-input-placeholder {
-    color: #212A52;
-  }
-
-  .md\:focus\:placeholder-dark-blue:focus::-ms-input-placeholder {
-    color: #212A52;
   }
 
   .md\:focus\:placeholder-dark-blue:focus::placeholder {
     color: #212A52;
   }
 
-  .md\:focus\:placeholder-light-blue:focus::-webkit-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .md\:focus\:placeholder-light-blue:focus::-moz-placeholder {
-    color: #ADD0DB;
-  }
-
-  .md\:focus\:placeholder-light-blue:focus:-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .md\:focus\:placeholder-light-blue:focus::-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
   .md\:focus\:placeholder-light-blue:focus::placeholder {
     color: #ADD0DB;
-  }
-
-  .md\:focus\:placeholder-blue-grey:focus::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .md\:focus\:placeholder-blue-grey:focus::-moz-placeholder {
-    color: #646569;
-  }
-
-  .md\:focus\:placeholder-blue-grey:focus:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .md\:focus\:placeholder-blue-grey:focus::-ms-input-placeholder {
-    color: #646569;
   }
 
   .md\:focus\:placeholder-blue-grey:focus::placeholder {
     color: #646569;
   }
 
-  .md\:focus\:placeholder-turquois:focus::-webkit-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .md\:focus\:placeholder-turquois:focus::-moz-placeholder {
-    color: #0AB4B4;
-  }
-
-  .md\:focus\:placeholder-turquois:focus:-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .md\:focus\:placeholder-turquois:focus::-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
   .md\:focus\:placeholder-turquois:focus::placeholder {
     color: #0AB4B4;
-  }
-
-  .md\:focus\:placeholder-light-turquois:focus::-webkit-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .md\:focus\:placeholder-light-turquois:focus::-moz-placeholder {
-    color: #0ccbcb;
-  }
-
-  .md\:focus\:placeholder-light-turquois:focus:-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .md\:focus\:placeholder-light-turquois:focus::-ms-input-placeholder {
-    color: #0ccbcb;
   }
 
   .md\:focus\:placeholder-light-turquois:focus::placeholder {
     color: #0ccbcb;
   }
 
-  .md\:focus\:placeholder-ultralight-turquois:focus::-webkit-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .md\:focus\:placeholder-ultralight-turquois:focus::-moz-placeholder {
-    color: #00e6e6;
-  }
-
-  .md\:focus\:placeholder-ultralight-turquois:focus:-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .md\:focus\:placeholder-ultralight-turquois:focus::-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
   .md\:focus\:placeholder-ultralight-turquois:focus::placeholder {
     color: #00e6e6;
-  }
-
-  .md\:focus\:placeholder-black:focus::-webkit-input-placeholder {
-    color: #000000;
-  }
-
-  .md\:focus\:placeholder-black:focus::-moz-placeholder {
-    color: #000000;
-  }
-
-  .md\:focus\:placeholder-black:focus:-ms-input-placeholder {
-    color: #000000;
-  }
-
-  .md\:focus\:placeholder-black:focus::-ms-input-placeholder {
-    color: #000000;
   }
 
   .md\:focus\:placeholder-black:focus::placeholder {
@@ -28562,29 +27008,21 @@ html {
 
   .md\:select-none {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
 
   .md\:select-text {
     -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
             user-select: text;
   }
 
   .md\:select-all {
     -webkit-user-select: all;
-       -moz-user-select: all;
-        -ms-user-select: all;
             user-select: all;
   }
 
   .md\:select-auto {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-        -ms-user-select: auto;
             user-select: auto;
   }
 
@@ -28988,116 +27426,97 @@ html {
 
   .md\:col-gap-0 {
     grid-column-gap: 0;
-    -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
   }
 
   .md\:col-gap-1 {
     grid-column-gap: 0.25rem;
-    -moz-column-gap: 0.25rem;
-         column-gap: 0.25rem;
+    column-gap: 0.25rem;
   }
 
   .md\:col-gap-2 {
     grid-column-gap: 0.5rem;
-    -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
+    column-gap: 0.5rem;
   }
 
   .md\:col-gap-3 {
     grid-column-gap: 0.75rem;
-    -moz-column-gap: 0.75rem;
-         column-gap: 0.75rem;
+    column-gap: 0.75rem;
   }
 
   .md\:col-gap-4 {
     grid-column-gap: 1rem;
-    -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
   }
 
   .md\:col-gap-5 {
     grid-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-         column-gap: 1.25rem;
+    column-gap: 1.25rem;
   }
 
   .md\:col-gap-6 {
     grid-column-gap: 1.5rem;
-    -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .md\:col-gap-8 {
     grid-column-gap: 2rem;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-gap: 2rem;
   }
 
   .md\:col-gap-10 {
     grid-column-gap: 2.5rem;
-    -moz-column-gap: 2.5rem;
-         column-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
 
   .md\:col-gap-12 {
     grid-column-gap: 3rem;
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
   }
 
   .md\:col-gap-16 {
     grid-column-gap: 4rem;
-    -moz-column-gap: 4rem;
-         column-gap: 4rem;
+    column-gap: 4rem;
   }
 
   .md\:col-gap-20 {
     grid-column-gap: 5rem;
-    -moz-column-gap: 5rem;
-         column-gap: 5rem;
+    column-gap: 5rem;
   }
 
   .md\:col-gap-24 {
     grid-column-gap: 6rem;
-    -moz-column-gap: 6rem;
-         column-gap: 6rem;
+    column-gap: 6rem;
   }
 
   .md\:col-gap-32 {
     grid-column-gap: 8rem;
-    -moz-column-gap: 8rem;
-         column-gap: 8rem;
+    column-gap: 8rem;
   }
 
   .md\:col-gap-40 {
     grid-column-gap: 10rem;
-    -moz-column-gap: 10rem;
-         column-gap: 10rem;
+    column-gap: 10rem;
   }
 
   .md\:col-gap-48 {
     grid-column-gap: 12rem;
-    -moz-column-gap: 12rem;
-         column-gap: 12rem;
+    column-gap: 12rem;
   }
 
   .md\:col-gap-56 {
     grid-column-gap: 14rem;
-    -moz-column-gap: 14rem;
-         column-gap: 14rem;
+    column-gap: 14rem;
   }
 
   .md\:col-gap-64 {
     grid-column-gap: 16rem;
-    -moz-column-gap: 16rem;
-         column-gap: 16rem;
+    column-gap: 16rem;
   }
 
   .md\:col-gap-px {
     grid-column-gap: 1px;
-    -moz-column-gap: 1px;
-         column-gap: 1px;
+    column-gap: 1px;
   }
 
   .md\:row-gap-0 {
@@ -34497,73 +32916,59 @@ html {
   }
 
   .lg\:object-contain {
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
 
   .lg\:object-cover {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 
   .lg\:object-fill {
-    -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .lg\:object-none {
-    -o-object-fit: none;
-       object-fit: none;
+    object-fit: none;
   }
 
   .lg\:object-scale-down {
-    -o-object-fit: scale-down;
-       object-fit: scale-down;
+    object-fit: scale-down;
   }
 
   .lg\:object-bottom {
-    -o-object-position: bottom;
-       object-position: bottom;
+    object-position: bottom;
   }
 
   .lg\:object-center {
-    -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
 
   .lg\:object-left {
-    -o-object-position: left;
-       object-position: left;
+    object-position: left;
   }
 
   .lg\:object-left-bottom {
-    -o-object-position: left bottom;
-       object-position: left bottom;
+    object-position: left bottom;
   }
 
   .lg\:object-left-top {
-    -o-object-position: left top;
-       object-position: left top;
+    object-position: left top;
   }
 
   .lg\:object-right {
-    -o-object-position: right;
-       object-position: right;
+    object-position: right;
   }
 
   .lg\:object-right-bottom {
-    -o-object-position: right bottom;
-       object-position: right bottom;
+    object-position: right bottom;
   }
 
   .lg\:object-right-top {
-    -o-object-position: right top;
-       object-position: right top;
+    object-position: right top;
   }
 
   .lg\:object-top {
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 
   .lg\:opacity-0 {
@@ -37540,520 +35945,104 @@ html {
     padding-left: 1px;
   }
 
-  .lg\:placeholder-white::-webkit-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .lg\:placeholder-white::-moz-placeholder {
-    color: #FFFFFF;
-  }
-
-  .lg\:placeholder-white:-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .lg\:placeholder-white::-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
   .lg\:placeholder-white::placeholder {
     color: #FFFFFF;
-  }
-
-  .lg\:placeholder-dirty-white::-webkit-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .lg\:placeholder-dirty-white::-moz-placeholder {
-    color: #E4E3E9;
-  }
-
-  .lg\:placeholder-dirty-white:-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .lg\:placeholder-dirty-white::-ms-input-placeholder {
-    color: #E4E3E9;
   }
 
   .lg\:placeholder-dirty-white::placeholder {
     color: #E4E3E9;
   }
 
-  .lg\:placeholder-blue-black::-webkit-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .lg\:placeholder-blue-black::-moz-placeholder {
-    color: #0B0E28;
-  }
-
-  .lg\:placeholder-blue-black:-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .lg\:placeholder-blue-black::-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
   .lg\:placeholder-blue-black::placeholder {
     color: #0B0E28;
-  }
-
-  .lg\:placeholder-mid-grey::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .lg\:placeholder-mid-grey::-moz-placeholder {
-    color: #646569;
-  }
-
-  .lg\:placeholder-mid-grey:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .lg\:placeholder-mid-grey::-ms-input-placeholder {
-    color: #646569;
   }
 
   .lg\:placeholder-mid-grey::placeholder {
     color: #646569;
   }
 
-  .lg\:placeholder-light-grey::-webkit-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .lg\:placeholder-light-grey::-moz-placeholder {
-    color: #DCD9D6;
-  }
-
-  .lg\:placeholder-light-grey:-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .lg\:placeholder-light-grey::-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
   .lg\:placeholder-light-grey::placeholder {
     color: #DCD9D6;
-  }
-
-  .lg\:placeholder-ultralight-grey::-webkit-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .lg\:placeholder-ultralight-grey::-moz-placeholder {
-    color: #F8F8FC;
-  }
-
-  .lg\:placeholder-ultralight-grey:-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .lg\:placeholder-ultralight-grey::-ms-input-placeholder {
-    color: #F8F8FC;
   }
 
   .lg\:placeholder-ultralight-grey::placeholder {
     color: #F8F8FC;
   }
 
-  .lg\:placeholder-dark-blue::-webkit-input-placeholder {
-    color: #212A52;
-  }
-
-  .lg\:placeholder-dark-blue::-moz-placeholder {
-    color: #212A52;
-  }
-
-  .lg\:placeholder-dark-blue:-ms-input-placeholder {
-    color: #212A52;
-  }
-
-  .lg\:placeholder-dark-blue::-ms-input-placeholder {
-    color: #212A52;
-  }
-
   .lg\:placeholder-dark-blue::placeholder {
     color: #212A52;
-  }
-
-  .lg\:placeholder-light-blue::-webkit-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .lg\:placeholder-light-blue::-moz-placeholder {
-    color: #ADD0DB;
-  }
-
-  .lg\:placeholder-light-blue:-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .lg\:placeholder-light-blue::-ms-input-placeholder {
-    color: #ADD0DB;
   }
 
   .lg\:placeholder-light-blue::placeholder {
     color: #ADD0DB;
   }
 
-  .lg\:placeholder-blue-grey::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .lg\:placeholder-blue-grey::-moz-placeholder {
-    color: #646569;
-  }
-
-  .lg\:placeholder-blue-grey:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .lg\:placeholder-blue-grey::-ms-input-placeholder {
-    color: #646569;
-  }
-
   .lg\:placeholder-blue-grey::placeholder {
     color: #646569;
-  }
-
-  .lg\:placeholder-turquois::-webkit-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .lg\:placeholder-turquois::-moz-placeholder {
-    color: #0AB4B4;
-  }
-
-  .lg\:placeholder-turquois:-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .lg\:placeholder-turquois::-ms-input-placeholder {
-    color: #0AB4B4;
   }
 
   .lg\:placeholder-turquois::placeholder {
     color: #0AB4B4;
   }
 
-  .lg\:placeholder-light-turquois::-webkit-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .lg\:placeholder-light-turquois::-moz-placeholder {
-    color: #0ccbcb;
-  }
-
-  .lg\:placeholder-light-turquois:-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .lg\:placeholder-light-turquois::-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
   .lg\:placeholder-light-turquois::placeholder {
     color: #0ccbcb;
-  }
-
-  .lg\:placeholder-ultralight-turquois::-webkit-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .lg\:placeholder-ultralight-turquois::-moz-placeholder {
-    color: #00e6e6;
-  }
-
-  .lg\:placeholder-ultralight-turquois:-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .lg\:placeholder-ultralight-turquois::-ms-input-placeholder {
-    color: #00e6e6;
   }
 
   .lg\:placeholder-ultralight-turquois::placeholder {
     color: #00e6e6;
   }
 
-  .lg\:placeholder-black::-webkit-input-placeholder {
-    color: #000000;
-  }
-
-  .lg\:placeholder-black::-moz-placeholder {
-    color: #000000;
-  }
-
-  .lg\:placeholder-black:-ms-input-placeholder {
-    color: #000000;
-  }
-
-  .lg\:placeholder-black::-ms-input-placeholder {
-    color: #000000;
-  }
-
   .lg\:placeholder-black::placeholder {
     color: #000000;
-  }
-
-  .lg\:focus\:placeholder-white:focus::-webkit-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .lg\:focus\:placeholder-white:focus::-moz-placeholder {
-    color: #FFFFFF;
-  }
-
-  .lg\:focus\:placeholder-white:focus:-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .lg\:focus\:placeholder-white:focus::-ms-input-placeholder {
-    color: #FFFFFF;
   }
 
   .lg\:focus\:placeholder-white:focus::placeholder {
     color: #FFFFFF;
   }
 
-  .lg\:focus\:placeholder-dirty-white:focus::-webkit-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .lg\:focus\:placeholder-dirty-white:focus::-moz-placeholder {
-    color: #E4E3E9;
-  }
-
-  .lg\:focus\:placeholder-dirty-white:focus:-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .lg\:focus\:placeholder-dirty-white:focus::-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
   .lg\:focus\:placeholder-dirty-white:focus::placeholder {
     color: #E4E3E9;
-  }
-
-  .lg\:focus\:placeholder-blue-black:focus::-webkit-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .lg\:focus\:placeholder-blue-black:focus::-moz-placeholder {
-    color: #0B0E28;
-  }
-
-  .lg\:focus\:placeholder-blue-black:focus:-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .lg\:focus\:placeholder-blue-black:focus::-ms-input-placeholder {
-    color: #0B0E28;
   }
 
   .lg\:focus\:placeholder-blue-black:focus::placeholder {
     color: #0B0E28;
   }
 
-  .lg\:focus\:placeholder-mid-grey:focus::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .lg\:focus\:placeholder-mid-grey:focus::-moz-placeholder {
-    color: #646569;
-  }
-
-  .lg\:focus\:placeholder-mid-grey:focus:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .lg\:focus\:placeholder-mid-grey:focus::-ms-input-placeholder {
-    color: #646569;
-  }
-
   .lg\:focus\:placeholder-mid-grey:focus::placeholder {
     color: #646569;
-  }
-
-  .lg\:focus\:placeholder-light-grey:focus::-webkit-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .lg\:focus\:placeholder-light-grey:focus::-moz-placeholder {
-    color: #DCD9D6;
-  }
-
-  .lg\:focus\:placeholder-light-grey:focus:-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .lg\:focus\:placeholder-light-grey:focus::-ms-input-placeholder {
-    color: #DCD9D6;
   }
 
   .lg\:focus\:placeholder-light-grey:focus::placeholder {
     color: #DCD9D6;
   }
 
-  .lg\:focus\:placeholder-ultralight-grey:focus::-webkit-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .lg\:focus\:placeholder-ultralight-grey:focus::-moz-placeholder {
-    color: #F8F8FC;
-  }
-
-  .lg\:focus\:placeholder-ultralight-grey:focus:-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .lg\:focus\:placeholder-ultralight-grey:focus::-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
   .lg\:focus\:placeholder-ultralight-grey:focus::placeholder {
     color: #F8F8FC;
-  }
-
-  .lg\:focus\:placeholder-dark-blue:focus::-webkit-input-placeholder {
-    color: #212A52;
-  }
-
-  .lg\:focus\:placeholder-dark-blue:focus::-moz-placeholder {
-    color: #212A52;
-  }
-
-  .lg\:focus\:placeholder-dark-blue:focus:-ms-input-placeholder {
-    color: #212A52;
-  }
-
-  .lg\:focus\:placeholder-dark-blue:focus::-ms-input-placeholder {
-    color: #212A52;
   }
 
   .lg\:focus\:placeholder-dark-blue:focus::placeholder {
     color: #212A52;
   }
 
-  .lg\:focus\:placeholder-light-blue:focus::-webkit-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .lg\:focus\:placeholder-light-blue:focus::-moz-placeholder {
-    color: #ADD0DB;
-  }
-
-  .lg\:focus\:placeholder-light-blue:focus:-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .lg\:focus\:placeholder-light-blue:focus::-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
   .lg\:focus\:placeholder-light-blue:focus::placeholder {
     color: #ADD0DB;
-  }
-
-  .lg\:focus\:placeholder-blue-grey:focus::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .lg\:focus\:placeholder-blue-grey:focus::-moz-placeholder {
-    color: #646569;
-  }
-
-  .lg\:focus\:placeholder-blue-grey:focus:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .lg\:focus\:placeholder-blue-grey:focus::-ms-input-placeholder {
-    color: #646569;
   }
 
   .lg\:focus\:placeholder-blue-grey:focus::placeholder {
     color: #646569;
   }
 
-  .lg\:focus\:placeholder-turquois:focus::-webkit-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .lg\:focus\:placeholder-turquois:focus::-moz-placeholder {
-    color: #0AB4B4;
-  }
-
-  .lg\:focus\:placeholder-turquois:focus:-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .lg\:focus\:placeholder-turquois:focus::-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
   .lg\:focus\:placeholder-turquois:focus::placeholder {
     color: #0AB4B4;
-  }
-
-  .lg\:focus\:placeholder-light-turquois:focus::-webkit-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .lg\:focus\:placeholder-light-turquois:focus::-moz-placeholder {
-    color: #0ccbcb;
-  }
-
-  .lg\:focus\:placeholder-light-turquois:focus:-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .lg\:focus\:placeholder-light-turquois:focus::-ms-input-placeholder {
-    color: #0ccbcb;
   }
 
   .lg\:focus\:placeholder-light-turquois:focus::placeholder {
     color: #0ccbcb;
   }
 
-  .lg\:focus\:placeholder-ultralight-turquois:focus::-webkit-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .lg\:focus\:placeholder-ultralight-turquois:focus::-moz-placeholder {
-    color: #00e6e6;
-  }
-
-  .lg\:focus\:placeholder-ultralight-turquois:focus:-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .lg\:focus\:placeholder-ultralight-turquois:focus::-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
   .lg\:focus\:placeholder-ultralight-turquois:focus::placeholder {
     color: #00e6e6;
-  }
-
-  .lg\:focus\:placeholder-black:focus::-webkit-input-placeholder {
-    color: #000000;
-  }
-
-  .lg\:focus\:placeholder-black:focus::-moz-placeholder {
-    color: #000000;
-  }
-
-  .lg\:focus\:placeholder-black:focus:-ms-input-placeholder {
-    color: #000000;
-  }
-
-  .lg\:focus\:placeholder-black:focus::-ms-input-placeholder {
-    color: #000000;
   }
 
   .lg\:focus\:placeholder-black:focus::placeholder {
@@ -38723,29 +36712,21 @@ html {
 
   .lg\:select-none {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
 
   .lg\:select-text {
     -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
             user-select: text;
   }
 
   .lg\:select-all {
     -webkit-user-select: all;
-       -moz-user-select: all;
-        -ms-user-select: all;
             user-select: all;
   }
 
   .lg\:select-auto {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-        -ms-user-select: auto;
             user-select: auto;
   }
 
@@ -39149,116 +37130,97 @@ html {
 
   .lg\:col-gap-0 {
     grid-column-gap: 0;
-    -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
   }
 
   .lg\:col-gap-1 {
     grid-column-gap: 0.25rem;
-    -moz-column-gap: 0.25rem;
-         column-gap: 0.25rem;
+    column-gap: 0.25rem;
   }
 
   .lg\:col-gap-2 {
     grid-column-gap: 0.5rem;
-    -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
+    column-gap: 0.5rem;
   }
 
   .lg\:col-gap-3 {
     grid-column-gap: 0.75rem;
-    -moz-column-gap: 0.75rem;
-         column-gap: 0.75rem;
+    column-gap: 0.75rem;
   }
 
   .lg\:col-gap-4 {
     grid-column-gap: 1rem;
-    -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
   }
 
   .lg\:col-gap-5 {
     grid-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-         column-gap: 1.25rem;
+    column-gap: 1.25rem;
   }
 
   .lg\:col-gap-6 {
     grid-column-gap: 1.5rem;
-    -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .lg\:col-gap-8 {
     grid-column-gap: 2rem;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-gap: 2rem;
   }
 
   .lg\:col-gap-10 {
     grid-column-gap: 2.5rem;
-    -moz-column-gap: 2.5rem;
-         column-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
 
   .lg\:col-gap-12 {
     grid-column-gap: 3rem;
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
   }
 
   .lg\:col-gap-16 {
     grid-column-gap: 4rem;
-    -moz-column-gap: 4rem;
-         column-gap: 4rem;
+    column-gap: 4rem;
   }
 
   .lg\:col-gap-20 {
     grid-column-gap: 5rem;
-    -moz-column-gap: 5rem;
-         column-gap: 5rem;
+    column-gap: 5rem;
   }
 
   .lg\:col-gap-24 {
     grid-column-gap: 6rem;
-    -moz-column-gap: 6rem;
-         column-gap: 6rem;
+    column-gap: 6rem;
   }
 
   .lg\:col-gap-32 {
     grid-column-gap: 8rem;
-    -moz-column-gap: 8rem;
-         column-gap: 8rem;
+    column-gap: 8rem;
   }
 
   .lg\:col-gap-40 {
     grid-column-gap: 10rem;
-    -moz-column-gap: 10rem;
-         column-gap: 10rem;
+    column-gap: 10rem;
   }
 
   .lg\:col-gap-48 {
     grid-column-gap: 12rem;
-    -moz-column-gap: 12rem;
-         column-gap: 12rem;
+    column-gap: 12rem;
   }
 
   .lg\:col-gap-56 {
     grid-column-gap: 14rem;
-    -moz-column-gap: 14rem;
-         column-gap: 14rem;
+    column-gap: 14rem;
   }
 
   .lg\:col-gap-64 {
     grid-column-gap: 16rem;
-    -moz-column-gap: 16rem;
-         column-gap: 16rem;
+    column-gap: 16rem;
   }
 
   .lg\:col-gap-px {
     grid-column-gap: 1px;
-    -moz-column-gap: 1px;
-         column-gap: 1px;
+    column-gap: 1px;
   }
 
   .lg\:row-gap-0 {
@@ -44658,73 +42620,59 @@ html {
   }
 
   .xl\:object-contain {
-    -o-object-fit: contain;
-       object-fit: contain;
+    object-fit: contain;
   }
 
   .xl\:object-cover {
-    -o-object-fit: cover;
-       object-fit: cover;
+    object-fit: cover;
   }
 
   .xl\:object-fill {
-    -o-object-fit: fill;
-       object-fit: fill;
+    object-fit: fill;
   }
 
   .xl\:object-none {
-    -o-object-fit: none;
-       object-fit: none;
+    object-fit: none;
   }
 
   .xl\:object-scale-down {
-    -o-object-fit: scale-down;
-       object-fit: scale-down;
+    object-fit: scale-down;
   }
 
   .xl\:object-bottom {
-    -o-object-position: bottom;
-       object-position: bottom;
+    object-position: bottom;
   }
 
   .xl\:object-center {
-    -o-object-position: center;
-       object-position: center;
+    object-position: center;
   }
 
   .xl\:object-left {
-    -o-object-position: left;
-       object-position: left;
+    object-position: left;
   }
 
   .xl\:object-left-bottom {
-    -o-object-position: left bottom;
-       object-position: left bottom;
+    object-position: left bottom;
   }
 
   .xl\:object-left-top {
-    -o-object-position: left top;
-       object-position: left top;
+    object-position: left top;
   }
 
   .xl\:object-right {
-    -o-object-position: right;
-       object-position: right;
+    object-position: right;
   }
 
   .xl\:object-right-bottom {
-    -o-object-position: right bottom;
-       object-position: right bottom;
+    object-position: right bottom;
   }
 
   .xl\:object-right-top {
-    -o-object-position: right top;
-       object-position: right top;
+    object-position: right top;
   }
 
   .xl\:object-top {
-    -o-object-position: top;
-       object-position: top;
+    object-position: top;
   }
 
   .xl\:opacity-0 {
@@ -47701,520 +45649,104 @@ html {
     padding-left: 1px;
   }
 
-  .xl\:placeholder-white::-webkit-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .xl\:placeholder-white::-moz-placeholder {
-    color: #FFFFFF;
-  }
-
-  .xl\:placeholder-white:-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .xl\:placeholder-white::-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
   .xl\:placeholder-white::placeholder {
     color: #FFFFFF;
-  }
-
-  .xl\:placeholder-dirty-white::-webkit-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .xl\:placeholder-dirty-white::-moz-placeholder {
-    color: #E4E3E9;
-  }
-
-  .xl\:placeholder-dirty-white:-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .xl\:placeholder-dirty-white::-ms-input-placeholder {
-    color: #E4E3E9;
   }
 
   .xl\:placeholder-dirty-white::placeholder {
     color: #E4E3E9;
   }
 
-  .xl\:placeholder-blue-black::-webkit-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .xl\:placeholder-blue-black::-moz-placeholder {
-    color: #0B0E28;
-  }
-
-  .xl\:placeholder-blue-black:-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .xl\:placeholder-blue-black::-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
   .xl\:placeholder-blue-black::placeholder {
     color: #0B0E28;
-  }
-
-  .xl\:placeholder-mid-grey::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .xl\:placeholder-mid-grey::-moz-placeholder {
-    color: #646569;
-  }
-
-  .xl\:placeholder-mid-grey:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .xl\:placeholder-mid-grey::-ms-input-placeholder {
-    color: #646569;
   }
 
   .xl\:placeholder-mid-grey::placeholder {
     color: #646569;
   }
 
-  .xl\:placeholder-light-grey::-webkit-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .xl\:placeholder-light-grey::-moz-placeholder {
-    color: #DCD9D6;
-  }
-
-  .xl\:placeholder-light-grey:-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .xl\:placeholder-light-grey::-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
   .xl\:placeholder-light-grey::placeholder {
     color: #DCD9D6;
-  }
-
-  .xl\:placeholder-ultralight-grey::-webkit-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .xl\:placeholder-ultralight-grey::-moz-placeholder {
-    color: #F8F8FC;
-  }
-
-  .xl\:placeholder-ultralight-grey:-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .xl\:placeholder-ultralight-grey::-ms-input-placeholder {
-    color: #F8F8FC;
   }
 
   .xl\:placeholder-ultralight-grey::placeholder {
     color: #F8F8FC;
   }
 
-  .xl\:placeholder-dark-blue::-webkit-input-placeholder {
-    color: #212A52;
-  }
-
-  .xl\:placeholder-dark-blue::-moz-placeholder {
-    color: #212A52;
-  }
-
-  .xl\:placeholder-dark-blue:-ms-input-placeholder {
-    color: #212A52;
-  }
-
-  .xl\:placeholder-dark-blue::-ms-input-placeholder {
-    color: #212A52;
-  }
-
   .xl\:placeholder-dark-blue::placeholder {
     color: #212A52;
-  }
-
-  .xl\:placeholder-light-blue::-webkit-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .xl\:placeholder-light-blue::-moz-placeholder {
-    color: #ADD0DB;
-  }
-
-  .xl\:placeholder-light-blue:-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .xl\:placeholder-light-blue::-ms-input-placeholder {
-    color: #ADD0DB;
   }
 
   .xl\:placeholder-light-blue::placeholder {
     color: #ADD0DB;
   }
 
-  .xl\:placeholder-blue-grey::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .xl\:placeholder-blue-grey::-moz-placeholder {
-    color: #646569;
-  }
-
-  .xl\:placeholder-blue-grey:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .xl\:placeholder-blue-grey::-ms-input-placeholder {
-    color: #646569;
-  }
-
   .xl\:placeholder-blue-grey::placeholder {
     color: #646569;
-  }
-
-  .xl\:placeholder-turquois::-webkit-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .xl\:placeholder-turquois::-moz-placeholder {
-    color: #0AB4B4;
-  }
-
-  .xl\:placeholder-turquois:-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .xl\:placeholder-turquois::-ms-input-placeholder {
-    color: #0AB4B4;
   }
 
   .xl\:placeholder-turquois::placeholder {
     color: #0AB4B4;
   }
 
-  .xl\:placeholder-light-turquois::-webkit-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .xl\:placeholder-light-turquois::-moz-placeholder {
-    color: #0ccbcb;
-  }
-
-  .xl\:placeholder-light-turquois:-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .xl\:placeholder-light-turquois::-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
   .xl\:placeholder-light-turquois::placeholder {
     color: #0ccbcb;
-  }
-
-  .xl\:placeholder-ultralight-turquois::-webkit-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .xl\:placeholder-ultralight-turquois::-moz-placeholder {
-    color: #00e6e6;
-  }
-
-  .xl\:placeholder-ultralight-turquois:-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .xl\:placeholder-ultralight-turquois::-ms-input-placeholder {
-    color: #00e6e6;
   }
 
   .xl\:placeholder-ultralight-turquois::placeholder {
     color: #00e6e6;
   }
 
-  .xl\:placeholder-black::-webkit-input-placeholder {
-    color: #000000;
-  }
-
-  .xl\:placeholder-black::-moz-placeholder {
-    color: #000000;
-  }
-
-  .xl\:placeholder-black:-ms-input-placeholder {
-    color: #000000;
-  }
-
-  .xl\:placeholder-black::-ms-input-placeholder {
-    color: #000000;
-  }
-
   .xl\:placeholder-black::placeholder {
     color: #000000;
-  }
-
-  .xl\:focus\:placeholder-white:focus::-webkit-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .xl\:focus\:placeholder-white:focus::-moz-placeholder {
-    color: #FFFFFF;
-  }
-
-  .xl\:focus\:placeholder-white:focus:-ms-input-placeholder {
-    color: #FFFFFF;
-  }
-
-  .xl\:focus\:placeholder-white:focus::-ms-input-placeholder {
-    color: #FFFFFF;
   }
 
   .xl\:focus\:placeholder-white:focus::placeholder {
     color: #FFFFFF;
   }
 
-  .xl\:focus\:placeholder-dirty-white:focus::-webkit-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .xl\:focus\:placeholder-dirty-white:focus::-moz-placeholder {
-    color: #E4E3E9;
-  }
-
-  .xl\:focus\:placeholder-dirty-white:focus:-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
-  .xl\:focus\:placeholder-dirty-white:focus::-ms-input-placeholder {
-    color: #E4E3E9;
-  }
-
   .xl\:focus\:placeholder-dirty-white:focus::placeholder {
     color: #E4E3E9;
-  }
-
-  .xl\:focus\:placeholder-blue-black:focus::-webkit-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .xl\:focus\:placeholder-blue-black:focus::-moz-placeholder {
-    color: #0B0E28;
-  }
-
-  .xl\:focus\:placeholder-blue-black:focus:-ms-input-placeholder {
-    color: #0B0E28;
-  }
-
-  .xl\:focus\:placeholder-blue-black:focus::-ms-input-placeholder {
-    color: #0B0E28;
   }
 
   .xl\:focus\:placeholder-blue-black:focus::placeholder {
     color: #0B0E28;
   }
 
-  .xl\:focus\:placeholder-mid-grey:focus::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .xl\:focus\:placeholder-mid-grey:focus::-moz-placeholder {
-    color: #646569;
-  }
-
-  .xl\:focus\:placeholder-mid-grey:focus:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .xl\:focus\:placeholder-mid-grey:focus::-ms-input-placeholder {
-    color: #646569;
-  }
-
   .xl\:focus\:placeholder-mid-grey:focus::placeholder {
     color: #646569;
-  }
-
-  .xl\:focus\:placeholder-light-grey:focus::-webkit-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .xl\:focus\:placeholder-light-grey:focus::-moz-placeholder {
-    color: #DCD9D6;
-  }
-
-  .xl\:focus\:placeholder-light-grey:focus:-ms-input-placeholder {
-    color: #DCD9D6;
-  }
-
-  .xl\:focus\:placeholder-light-grey:focus::-ms-input-placeholder {
-    color: #DCD9D6;
   }
 
   .xl\:focus\:placeholder-light-grey:focus::placeholder {
     color: #DCD9D6;
   }
 
-  .xl\:focus\:placeholder-ultralight-grey:focus::-webkit-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .xl\:focus\:placeholder-ultralight-grey:focus::-moz-placeholder {
-    color: #F8F8FC;
-  }
-
-  .xl\:focus\:placeholder-ultralight-grey:focus:-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
-  .xl\:focus\:placeholder-ultralight-grey:focus::-ms-input-placeholder {
-    color: #F8F8FC;
-  }
-
   .xl\:focus\:placeholder-ultralight-grey:focus::placeholder {
     color: #F8F8FC;
-  }
-
-  .xl\:focus\:placeholder-dark-blue:focus::-webkit-input-placeholder {
-    color: #212A52;
-  }
-
-  .xl\:focus\:placeholder-dark-blue:focus::-moz-placeholder {
-    color: #212A52;
-  }
-
-  .xl\:focus\:placeholder-dark-blue:focus:-ms-input-placeholder {
-    color: #212A52;
-  }
-
-  .xl\:focus\:placeholder-dark-blue:focus::-ms-input-placeholder {
-    color: #212A52;
   }
 
   .xl\:focus\:placeholder-dark-blue:focus::placeholder {
     color: #212A52;
   }
 
-  .xl\:focus\:placeholder-light-blue:focus::-webkit-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .xl\:focus\:placeholder-light-blue:focus::-moz-placeholder {
-    color: #ADD0DB;
-  }
-
-  .xl\:focus\:placeholder-light-blue:focus:-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
-  .xl\:focus\:placeholder-light-blue:focus::-ms-input-placeholder {
-    color: #ADD0DB;
-  }
-
   .xl\:focus\:placeholder-light-blue:focus::placeholder {
     color: #ADD0DB;
-  }
-
-  .xl\:focus\:placeholder-blue-grey:focus::-webkit-input-placeholder {
-    color: #646569;
-  }
-
-  .xl\:focus\:placeholder-blue-grey:focus::-moz-placeholder {
-    color: #646569;
-  }
-
-  .xl\:focus\:placeholder-blue-grey:focus:-ms-input-placeholder {
-    color: #646569;
-  }
-
-  .xl\:focus\:placeholder-blue-grey:focus::-ms-input-placeholder {
-    color: #646569;
   }
 
   .xl\:focus\:placeholder-blue-grey:focus::placeholder {
     color: #646569;
   }
 
-  .xl\:focus\:placeholder-turquois:focus::-webkit-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .xl\:focus\:placeholder-turquois:focus::-moz-placeholder {
-    color: #0AB4B4;
-  }
-
-  .xl\:focus\:placeholder-turquois:focus:-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
-  .xl\:focus\:placeholder-turquois:focus::-ms-input-placeholder {
-    color: #0AB4B4;
-  }
-
   .xl\:focus\:placeholder-turquois:focus::placeholder {
     color: #0AB4B4;
-  }
-
-  .xl\:focus\:placeholder-light-turquois:focus::-webkit-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .xl\:focus\:placeholder-light-turquois:focus::-moz-placeholder {
-    color: #0ccbcb;
-  }
-
-  .xl\:focus\:placeholder-light-turquois:focus:-ms-input-placeholder {
-    color: #0ccbcb;
-  }
-
-  .xl\:focus\:placeholder-light-turquois:focus::-ms-input-placeholder {
-    color: #0ccbcb;
   }
 
   .xl\:focus\:placeholder-light-turquois:focus::placeholder {
     color: #0ccbcb;
   }
 
-  .xl\:focus\:placeholder-ultralight-turquois:focus::-webkit-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .xl\:focus\:placeholder-ultralight-turquois:focus::-moz-placeholder {
-    color: #00e6e6;
-  }
-
-  .xl\:focus\:placeholder-ultralight-turquois:focus:-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
-  .xl\:focus\:placeholder-ultralight-turquois:focus::-ms-input-placeholder {
-    color: #00e6e6;
-  }
-
   .xl\:focus\:placeholder-ultralight-turquois:focus::placeholder {
     color: #00e6e6;
-  }
-
-  .xl\:focus\:placeholder-black:focus::-webkit-input-placeholder {
-    color: #000000;
-  }
-
-  .xl\:focus\:placeholder-black:focus::-moz-placeholder {
-    color: #000000;
-  }
-
-  .xl\:focus\:placeholder-black:focus:-ms-input-placeholder {
-    color: #000000;
-  }
-
-  .xl\:focus\:placeholder-black:focus::-ms-input-placeholder {
-    color: #000000;
   }
 
   .xl\:focus\:placeholder-black:focus::placeholder {
@@ -48884,29 +46416,21 @@ html {
 
   .xl\:select-none {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
             user-select: none;
   }
 
   .xl\:select-text {
     -webkit-user-select: text;
-       -moz-user-select: text;
-        -ms-user-select: text;
             user-select: text;
   }
 
   .xl\:select-all {
     -webkit-user-select: all;
-       -moz-user-select: all;
-        -ms-user-select: all;
             user-select: all;
   }
 
   .xl\:select-auto {
     -webkit-user-select: auto;
-       -moz-user-select: auto;
-        -ms-user-select: auto;
             user-select: auto;
   }
 
@@ -49310,116 +46834,97 @@ html {
 
   .xl\:col-gap-0 {
     grid-column-gap: 0;
-    -moz-column-gap: 0;
-         column-gap: 0;
+    column-gap: 0;
   }
 
   .xl\:col-gap-1 {
     grid-column-gap: 0.25rem;
-    -moz-column-gap: 0.25rem;
-         column-gap: 0.25rem;
+    column-gap: 0.25rem;
   }
 
   .xl\:col-gap-2 {
     grid-column-gap: 0.5rem;
-    -moz-column-gap: 0.5rem;
-         column-gap: 0.5rem;
+    column-gap: 0.5rem;
   }
 
   .xl\:col-gap-3 {
     grid-column-gap: 0.75rem;
-    -moz-column-gap: 0.75rem;
-         column-gap: 0.75rem;
+    column-gap: 0.75rem;
   }
 
   .xl\:col-gap-4 {
     grid-column-gap: 1rem;
-    -moz-column-gap: 1rem;
-         column-gap: 1rem;
+    column-gap: 1rem;
   }
 
   .xl\:col-gap-5 {
     grid-column-gap: 1.25rem;
-    -moz-column-gap: 1.25rem;
-         column-gap: 1.25rem;
+    column-gap: 1.25rem;
   }
 
   .xl\:col-gap-6 {
     grid-column-gap: 1.5rem;
-    -moz-column-gap: 1.5rem;
-         column-gap: 1.5rem;
+    column-gap: 1.5rem;
   }
 
   .xl\:col-gap-8 {
     grid-column-gap: 2rem;
-    -moz-column-gap: 2rem;
-         column-gap: 2rem;
+    column-gap: 2rem;
   }
 
   .xl\:col-gap-10 {
     grid-column-gap: 2.5rem;
-    -moz-column-gap: 2.5rem;
-         column-gap: 2.5rem;
+    column-gap: 2.5rem;
   }
 
   .xl\:col-gap-12 {
     grid-column-gap: 3rem;
-    -moz-column-gap: 3rem;
-         column-gap: 3rem;
+    column-gap: 3rem;
   }
 
   .xl\:col-gap-16 {
     grid-column-gap: 4rem;
-    -moz-column-gap: 4rem;
-         column-gap: 4rem;
+    column-gap: 4rem;
   }
 
   .xl\:col-gap-20 {
     grid-column-gap: 5rem;
-    -moz-column-gap: 5rem;
-         column-gap: 5rem;
+    column-gap: 5rem;
   }
 
   .xl\:col-gap-24 {
     grid-column-gap: 6rem;
-    -moz-column-gap: 6rem;
-         column-gap: 6rem;
+    column-gap: 6rem;
   }
 
   .xl\:col-gap-32 {
     grid-column-gap: 8rem;
-    -moz-column-gap: 8rem;
-         column-gap: 8rem;
+    column-gap: 8rem;
   }
 
   .xl\:col-gap-40 {
     grid-column-gap: 10rem;
-    -moz-column-gap: 10rem;
-         column-gap: 10rem;
+    column-gap: 10rem;
   }
 
   .xl\:col-gap-48 {
     grid-column-gap: 12rem;
-    -moz-column-gap: 12rem;
-         column-gap: 12rem;
+    column-gap: 12rem;
   }
 
   .xl\:col-gap-56 {
     grid-column-gap: 14rem;
-    -moz-column-gap: 14rem;
-         column-gap: 14rem;
+    column-gap: 14rem;
   }
 
   .xl\:col-gap-64 {
     grid-column-gap: 16rem;
-    -moz-column-gap: 16rem;
-         column-gap: 16rem;
+    column-gap: 16rem;
   }
 
   .xl\:col-gap-px {
     grid-column-gap: 1px;
-    -moz-column-gap: 1px;
-         column-gap: 1px;
+    column-gap: 1px;
   }
 
   .xl\:row-gap-0 {

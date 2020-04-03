@@ -1,5 +1,4 @@
 /node_modules
 /build
-src/graphql/types.tsx
 babel-plugin-macros.config.js
 postcss.config.js
