@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../../helpers/types/types';
-import { TooltipColors } from '../../helpers/Colors';
-import { ScreenHeightContext } from '../../helpers/screenHeightContext';
-import returnTimeInMs from '../../helpers/returnTimeInMs';
+import { TooltipColors } from '../../helpers/const/Colors';
+import { ScreenHeightContext } from '../../helpers/hooks/screenHeightContext';
+import returnTimeInMs from '../../helpers/functions/returnTimeInMs';
 
 type LineChartProps = {
   loading: boolean;

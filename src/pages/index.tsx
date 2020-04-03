@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import Select from 'react-select';
 import LineChart from '../components/charts/LineChart';
-import useData from '../helpers/useData';
+import useData from '../helpers/hooks/useData';
 import Layout from '../components/layout/Layout';
 import LogScaleSwitch from '../components/switches/LogScaleSwitch';
 
@@ -9,6 +10,7 @@ const Index = () => {
 
   const { loading, data } = useData({
     offset: 21,
+    selectedCountries: ['Germany', 'Italy', 'US', 'France', 'Spain', 'United Kingdom', 'China'],
   });
 
   return (

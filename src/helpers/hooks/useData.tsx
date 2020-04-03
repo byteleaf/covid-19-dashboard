@@ -2,11 +2,16 @@ import { useEffect, useState } from 'react';
 import csv from 'csvtojson';
 import axios from 'axios';
 import { cloneDeep, takeRight } from 'lodash';
-import { Country, CountryData } from './types/types';
-import { CountryName } from './types/CountryName';
+import { Country, CountryData, CountryName } from '../types/types';
 
 type UseDataProps = {
   offset?: number; // Only fetch the last X days
+  selectedCountries: string[];
+};
+
+type GetDataProps = {
+  offset: number; // Only fetch the last X days
+  selectedCountries: string[];
 };
 
 type FetchedData = {
@@ -15,9 +20,7 @@ type FetchedData = {
   recovered: { [key: string]: string }[];
 };
 
-const selectedCountries: string[] = ['Germany', 'Italy', 'US', 'France', 'Spain', 'United Kingdom', 'China'];
-
-const fetchData = async (): Promise<FetchedData> => {
+const fetchData = async (selectedCountries: string[]): Promise<FetchedData> => {
   const urls = [
     'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv',
     'https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv',
@@ -102,16 +105,16 @@ const mapData = async (data: FetchedData, offset: number): Promise<Country[]> =>
   return mappedData;
 };
 
-const getData = async ({ offset }: { offset: number }) => {
-  const data = await fetchData();
+const getData = async ({ offset, selectedCountries }: GetDataProps) => {
+  const data = await fetchData(selectedCountries);
   return mapData(data, offset);
 };
 
-const useData = ({ offset }: UseDataProps) => {
+const useData = ({ offset, selectedCountries }: UseDataProps) => {
   const [data, setData] = useState<Country[] | null>(null);
 
   useEffect(() => {
-    getData({ offset: offset ?? 0 }).then(setData);
+    getData({ offset: offset ?? 0, selectedCountries }).then(setData);
   }, [setData]);
 
   return {

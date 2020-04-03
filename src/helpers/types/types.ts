@@ -1,4 +1,4 @@
-import { CountryName } from './CountryName';
+import Countries from '../const/Countries';
 
 export type CountryDataPoint = {
   day?: number; // Relative day in chart
@@ -10,6 +10,8 @@ export type CountryDataPoint = {
 };
 
 export type CountryData = CountryDataPoint[];
+
+export type CountryName = typeof Countries[number];
 
 export type Country = {
   name: CountryName;

@@ -3,8 +3,8 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { take } from 'lodash';
 import { Country, CountryDataPoint } from '../../helpers/types/types';
-import { HelperColors, TooltipColors } from '../../helpers/Colors';
-import { ScreenHeightContext } from '../../helpers/screenHeightContext';
+import { HelperColors, TooltipColors } from '../../helpers/const/Colors';
+import { ScreenHeightContext } from '../../helpers/hooks/screenHeightContext';
 
 type DoublingTimeChartProps = {
   loading: boolean;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import useData from '../helpers/useData';
+import useData from '../helpers/hooks/useData';
 import AreaChart from '../components/charts/AreaChart';
 import { Country } from '../helpers/types/types';
 import Layout from '../components/layout/Layout';
@@ -10,6 +10,7 @@ const AllInOne = () => {
 
   const { loading, data } = useData({
     offset: 21,
+    selectedCountries: ['Germany', 'Italy', 'US', 'France', 'Spain', 'United Kingdom', 'China'],
   });
 
   return (

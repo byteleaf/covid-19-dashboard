@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../../helpers/types/types';
-import { ScreenHeightContext } from '../../helpers/screenHeightContext';
-import { StateColors, TooltipColors } from '../../helpers/Colors';
-import returnTimeInMs from '../../helpers/returnTimeInMs';
+import { ScreenHeightContext } from '../../helpers/hooks/screenHeightContext';
+import { StateColors, TooltipColors } from '../../helpers/const/Colors';
+import returnTimeInMs from '../../helpers/functions/returnTimeInMs';
 
 type AreaChartProps = {
   loading: boolean;
