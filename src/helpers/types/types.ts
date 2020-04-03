@@ -1,3 +1,5 @@
+import { CountryName } from './CountryName';
+
 export type CountryDataPoint = {
   day?: number; // Relative day in chart
   date: Date;
@@ -8,8 +10,6 @@ export type CountryDataPoint = {
 };
 
 export type CountryData = CountryDataPoint[];
-
-export type CountryName = 'China' | 'France' | 'Germany' | 'Italy' | 'Spain' | 'US' | 'United Kingdom';
 
 export type Country = {
   name: CountryName;

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { Country } from '../../helpers/types';
+import { Country } from '../../helpers/types/types';
 import { ScreenHeightContext } from '../../helpers/screenHeightContext';
 import { StateColors, TooltipColors } from '../../helpers/Colors';
 import returnTimeInMs from '../../helpers/returnTimeInMs';
@@ -67,14 +67,14 @@ const AreaChart: React.FC<AreaChartProps> = ({ loading, data, title, subtitle, l
         color: StateColors.Active,
       },
       {
-        name: 'Deaths',
-        data: data?.data.map(day => [returnTimeInMs(day.date), day.deaths]),
-        color: StateColors.Deaths,
-      },
-      {
         name: 'Recovered',
         data: data?.data.map(day => [returnTimeInMs(day.date), day.recovered]),
         color: StateColors.Recovered,
+      },
+      {
+        name: 'Deaths',
+        data: data?.data.map(day => [returnTimeInMs(day.date), day.deaths]),
+        color: StateColors.Deaths,
       },
     ],
   };
@@ -84,7 +84,7 @@ const AreaChart: React.FC<AreaChartProps> = ({ loading, data, title, subtitle, l
   }
 
   return (
-    <div className="w-full md:w-1/2 pb-12">
+    <div className="w-full md:w-1/2 px-2 py-8">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

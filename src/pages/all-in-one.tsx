@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import useData from '../helpers/useData';
 import AreaChart from '../components/charts/AreaChart';
-import { Country } from '../helpers/types';
+import { Country } from '../helpers/types/types';
 import Layout from '../components/layout/Layout';
 import LogScaleSwitch from '../components/switches/LogScaleSwitch';
 

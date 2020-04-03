@@ -2,15 +2,11 @@ import { useEffect, useState } from 'react';
 import csv from 'csvtojson';
 import axios from 'axios';
 import { cloneDeep, takeRight } from 'lodash';
-import { Country, CountryData, CountryName } from './types';
+import { Country, CountryData } from './types/types';
+import { CountryName } from './types/CountryName';
 
 type UseDataProps = {
   offset?: number; // Only fetch the last X days
-};
-
-type SelectedCountries = {
-  countries: string[];
-  states: string[];
 };
 
 type FetchedData = {
@@ -19,10 +15,7 @@ type FetchedData = {
   recovered: { [key: string]: string }[];
 };
 
-const selectedCountries: SelectedCountries = {
-  countries: ['Germany', 'Italy', 'US', 'France', 'Spain', 'United Kingdom'], // We don't want the Provinces of France to be in the Dataset
-  states: ['China'], // Some countries are divided into states. Here we want to sum up all state data.
-};
+const selectedCountries: string[] = ['Germany', 'Italy', 'US', 'France', 'Spain', 'United Kingdom', 'China'];
 
 const fetchData = async (): Promise<FetchedData> => {
   const urls = [
@@ -39,19 +32,14 @@ const fetchData = async (): Promise<FetchedData> => {
 
   // Filter data of the selected countries
   const selectedCountryData = allData.map(allD =>
-    allD.filter(country => selectedCountries.countries.includes(country['Country/Region'])),
-  );
-
-  // Filter data of the selected states
-  const selectedStateData = allData.map(allD =>
-    allD.filter(country => selectedCountries.states.includes(country['Country/Region'])),
+    allD.filter(country => selectedCountries.includes(country['Country/Region'])),
   );
 
   // Combine Data and return
   return {
-    confirmed: [...selectedCountryData[0], ...selectedStateData[0]],
-    deaths: [...selectedCountryData[1], ...selectedStateData[1]],
-    recovered: [...selectedCountryData[2], ...selectedStateData[2]],
+    confirmed: selectedCountryData[0],
+    deaths: selectedCountryData[1],
+    recovered: selectedCountryData[2],
   };
 };
 

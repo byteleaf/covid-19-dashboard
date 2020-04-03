@@ -15,10 +15,19 @@ const DoublingTimes = () => {
           loading={loading}
           data={data}
           dataKey="infections"
-          startValue={1000}
+          startValue={100}
           title="Covid-19 Infection Doubling Time"
           xAxisTitle="Days since the 100th Infection"
           yAxisTitle="Infections"
+        />
+        <DoublingTimeChart
+          loading={loading}
+          data={data}
+          dataKey="deaths"
+          startValue={10}
+          title="Covid-19 Deaths Doubling Time"
+          xAxisTitle="Days since the 10th Death"
+          yAxisTitle="Death"
         />
       </div>
     </Layout>

@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
-import { Country } from '../../helpers/types';
-import { CountryColors, TooltipColors } from '../../helpers/Colors';
+import { Country } from '../../helpers/types/types';
+import { TooltipColors } from '../../helpers/Colors';
 import { ScreenHeightContext } from '../../helpers/screenHeightContext';
 import returnTimeInMs from '../../helpers/returnTimeInMs';
 
@@ -72,7 +72,6 @@ const LineChart: React.FC<LineChartProps> = ({ loading, data, dataKey, title, su
     series: data?.map(country => ({
       name: country.name,
       data: country.data.map(day => [returnTimeInMs(day.date), day[dataKey]]),
-      color: CountryColors[country.name],
     })),
     responsive: {
       rules: [
@@ -97,7 +96,7 @@ const LineChart: React.FC<LineChartProps> = ({ loading, data, dataKey, title, su
   }
 
   return (
-    <div className="w-full md:w-1/2 pb-12">
+    <div className="w-full md:w-1/2 px-2 py-8">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );

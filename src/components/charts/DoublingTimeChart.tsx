@@ -2,8 +2,8 @@ import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { take } from 'lodash';
-import { Country, CountryDataPoint } from '../../helpers/types';
-import { CountryColors, HelperColors, TooltipColors } from '../../helpers/Colors';
+import { Country, CountryDataPoint } from '../../helpers/types/types';
+import { HelperColors, TooltipColors } from '../../helpers/Colors';
 import { ScreenHeightContext } from '../../helpers/screenHeightContext';
 
 type DoublingTimeChartProps = {
@@ -20,7 +20,7 @@ type LineData = {
   name: string;
   data: [number, number][];
   dashStyle: string;
-  color: string;
+  color?: string;
 };
 
 const firstXDays = 60;
@@ -55,7 +55,7 @@ const DoublingTimeChart: React.FC<DoublingTimeChartProps> = ({
 
   const createDoublingLine = (doublingTimeInDays: number): LineData => ({
     name: `Doubles every ${doublingTimeInDays} days`,
-    data: [...Array(firstXDays / (4 / doublingTimeInDays))].map((_, i) => {
+    data: [...Array(firstXDays / (5 / doublingTimeInDays))].map((_, i) => {
       const day = i + 1;
       const currentValue = startValue * (2 ** (1 / doublingTimeInDays)) ** i;
 
@@ -72,7 +72,6 @@ const DoublingTimeChart: React.FC<DoublingTimeChartProps> = ({
       name: country.name,
       data: country.data.map(row => [row.day as number, row[dataKey]]),
       dashStyle: 'Solid',
-      color: CountryColors[country.name],
     })) || [];
 
   const dataPlusLines: LineData[] = [...lineData, ...doublingLines];
@@ -148,7 +147,11 @@ const DoublingTimeChart: React.FC<DoublingTimeChartProps> = ({
     return <div>Loading...</div>;
   }
 
-  return <HighchartsReact highcharts={Highcharts} options={options} />;
+  return (
+    <div className="w-full px-2 py-8">
+      <HighchartsReact highcharts={Highcharts} options={options} />
+    </div>
+  );
 };
 
 export default DoublingTimeChart;
