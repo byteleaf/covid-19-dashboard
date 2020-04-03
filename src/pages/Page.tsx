@@ -1,6 +1,7 @@
 import * as React from 'react';
-import { Switch, Route, useRouteMatch } from 'react-router';
+import { Switch, Route, useRouteMatch, useLocation } from 'react-router';
 import Select, { ValueType } from 'react-select';
+import { CSSProperties } from 'react';
 import Dashboard from './views/Dashboard';
 import AllInOne from './views/AllInOne';
 import DoublingTimes from './views/DoublingTimes';
@@ -25,8 +26,13 @@ const defaultCountries: SelectOption[] = DefaultCountries.map(country => ({
   label: country,
 }));
 
+const countrySelectionStyles = {
+  control: (styles: CSSProperties) => ({ ...styles, minWidth: '300px' }),
+};
+
 const Page: React.SFC = () => {
   const { path } = useRouteMatch();
+  const { pathname } = useLocation();
 
   const [selectedCountries, setSelectedCountries] = React.useState<SelectOption[]>(defaultCountries);
   const [isLogScale, setIsLogScale] = React.useState(false);
@@ -34,24 +40,28 @@ const Page: React.SFC = () => {
   const seletedCountryStrings = selectedCountries.map(country => country.value);
 
   const { loading, data } = useData({
-    offset: 21,
+    offset: 0,
     selectedCountries: seletedCountryStrings,
     numberOfCountries: seletedCountryStrings.length,
   });
+
+  const onCountriesChanged = (value: ValueType<SelectOption>) =>
+    setSelectedCountries(value !== null ? (value as SelectOption[]) : []);
 
   return (
     <Layout>
       <div className="flex justify-center pt-8">
         <Select
           value={selectedCountries}
-          onChange={(value: ValueType<SelectOption>) => setSelectedCountries(value as SelectOption[])}
+          onChange={onCountriesChanged}
           options={selectOptions}
           isMulti
           closeMenuOnSelect={false}
+          styles={countrySelectionStyles}
         />
       </div>
       <div className="flex justify-center pt-8">
-        {!loading && (
+        {!loading && pathname !== '/page/doubling-times' && (
           <LogScaleSwitch isLogScale={isLogScale} setIsLogScale={(setTo: boolean) => setIsLogScale(setTo)} />
         )}
       </div>
@@ -63,7 +73,7 @@ const Page: React.SFC = () => {
           <AllInOne isLogScale={isLogScale} loading={loading} countryData={data} />
         </Route>
         <Route path={`${path}/doubling-times`}>
-          <DoublingTimes />
+          <DoublingTimes loading={loading} countryData={data} />
         </Route>
       </Switch>
     </Layout>
