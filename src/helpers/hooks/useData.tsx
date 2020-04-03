@@ -7,7 +7,6 @@ import { Country, CountryData, CountryName } from '../types/types';
 type UseDataProps = {
   offset?: number; // Only fetch the last X days
   selectedCountries: string[];
-  numberOfCountries: number;
 };
 
 type GetDataProps = {
@@ -111,13 +110,16 @@ const getData = async ({ offset, selectedCountries }: GetDataProps) => {
   return mapData(data, offset);
 };
 
-const useData = ({ offset, selectedCountries, numberOfCountries }: UseDataProps) => {
-  // numberOfCountries is needed to retrigger useEffect (selectedCountries is an array and triggers an infinite loop
+const useData = ({ offset, selectedCountries }: UseDataProps) => {
   const [data, setData] = useState<Country[] | null>(null);
+  const [oldSelectedCountries, setOldSelectedCountries] = useState<string[]>([]);
 
   useEffect(() => {
-    getData({ offset: offset ?? 0, selectedCountries }).then(setData);
-  }, [numberOfCountries, offset, setData]);
+    if (oldSelectedCountries.length !== selectedCountries.length) {
+      setOldSelectedCountries(selectedCountries);
+      getData({ offset: offset ?? 0, selectedCountries }).then(setData);
+    }
+  }, [oldSelectedCountries, selectedCountries, offset, setData]);
 
   return {
     loading: !data,

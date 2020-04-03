@@ -11,8 +11,9 @@ type AllInOneProps = {
 const AllInOne: React.FC<AllInOneProps> = ({ loading, countryData, isLogScale }) => {
   return (
     <div className="flex flex-wrap">
-      {countryData?.map(singleCountryData => (
+      {countryData?.map((singleCountryData, i) => (
         <AreaChart
+          key={i} // We explicitly want to use the index (smooth rerender effect from Highcharts)
           loading={loading}
           data={singleCountryData}
           title={singleCountryData.name}

@@ -42,7 +42,6 @@ const Page: React.SFC = () => {
   const { loading, data } = useData({
     offset: 0,
     selectedCountries: seletedCountryStrings,
-    numberOfCountries: seletedCountryStrings.length,
   });
 
   const onCountriesChanged = (value: ValueType<SelectOption>) =>
