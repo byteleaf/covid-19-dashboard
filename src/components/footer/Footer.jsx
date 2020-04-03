@@ -11,6 +11,9 @@ const Footer = () => (
       </a>
     </div>
     <div className="text-sm uppercase text-light-grey tracking-widest" style={{ paddingBottom: 0 }}>
+      <a href="https://github.com/CSSEGISandData/COVID-19">Data by CSSE at Johns Hopkins University</a>
+    </div>
+    <div className="text-sm uppercase text-light-grey tracking-widest" style={{ paddingBottom: 0 }}>
       {`© ${new Date().getFullYear()} - Code: byteleaf`}
     </div>
   </div>
