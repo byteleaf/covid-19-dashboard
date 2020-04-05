@@ -141,6 +141,9 @@ const DoublingTimeChart: React.FC<DoublingTimeChartProps> = ({
         },
       ],
     },
+    credits: {
+      enabled: false,
+    },
   };
 
   if (loading) {

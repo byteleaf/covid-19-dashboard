@@ -77,6 +77,9 @@ const AreaChart: React.FC<AreaChartProps> = ({ loading, data, title, subtitle, l
         color: StateColors.Deaths,
       },
     ],
+    credits: {
+      enabled: false,
+    },
   };
 
   if (loading) {
