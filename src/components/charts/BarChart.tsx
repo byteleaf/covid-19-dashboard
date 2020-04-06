@@ -99,6 +99,9 @@ const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle, log
         },
       ],
     },
+    credits: {
+      enabled: false,
+    },
   };
 
   if (loading) {
