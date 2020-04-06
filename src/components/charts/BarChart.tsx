@@ -50,6 +50,13 @@ const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle, log
       borderWidth: 1,
       shadow: false,
     },
+    plotOptions: {
+      column: {
+        pointPadding: 0.1,
+        groupPadding: 0.1,
+        borderWidth: 0,
+      },
+    },
     series: [
       {
         name: 'Infections',
