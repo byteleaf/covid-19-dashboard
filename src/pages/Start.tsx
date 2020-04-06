@@ -10,7 +10,7 @@ const Start: React.FC = () => {
           <div className="flex w-1/2 h-64 p-2">
             <Link
               to="/page/cumulated"
-              className="flex justify-center items-center bg-turquois text-white hover:bg-light-turquois w-full h-full font-roboto-mono text-base uppercase tracking-widest-2"
+              className="flex justify-center items-center bg-turquois text-white text-center hover:bg-light-turquois w-full h-full font-roboto-mono text-base uppercase tracking-widest-2"
             >
               Cumulated Values
             </Link>
@@ -18,7 +18,7 @@ const Start: React.FC = () => {
           <div className="flex w-1/2 h-64 p-2">
             <Link
               to="/page/daily-rates"
-              className="flex justify-center items-center bg-turquois text-white hover:bg-light-turquois w-full h-full font-roboto-mono text-base uppercase tracking-widest-2"
+              className="flex justify-center items-center bg-turquois text-white text-center hover:bg-light-turquois w-full h-full font-roboto-mono text-base uppercase tracking-widest-2"
             >
               Daily Rates
             </Link>
@@ -26,7 +26,7 @@ const Start: React.FC = () => {
           <div className="flex w-1/2 h-64 p-2">
             <Link
               to="/page/all-in-one"
-              className="flex justify-center items-center bg-turquois text-white hover:bg-light-turquois w-full h-full font-roboto-mono text-base uppercase tracking-widest-2"
+              className="flex justify-center items-center bg-turquois text-white text-center hover:bg-light-turquois w-full h-full font-roboto-mono text-base uppercase tracking-widest-2"
             >
               All In One
             </Link>
@@ -34,7 +34,7 @@ const Start: React.FC = () => {
           <div className="flex w-1/2 h-64 p-2">
             <Link
               to="/page/doubling-times"
-              className="flex justify-center items-center bg-turquois text-white hover:bg-light-turquois w-full h-full font-roboto-mono text-base uppercase tracking-widest-2"
+              className="flex justify-center items-center bg-turquois text-white text-center hover:bg-light-turquois w-full h-full font-roboto-mono text-base uppercase tracking-widest-2"
             >
               Doubling Times
             </Link>
