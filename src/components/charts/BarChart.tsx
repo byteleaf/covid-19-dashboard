@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
+import { drop } from 'lodash';
 import { Country } from '../../helpers/types/types';
 import { TooltipColors, StateColors } from '../../helpers/const/Colors';
 import { ScreenHeightContext } from '../../helpers/hooks/screenHeightContext';
@@ -31,6 +32,7 @@ const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle, log
     },
     xAxis: {
       type: 'datetime',
+      crosshair: true,
     },
     yAxis: {
       type: logScale ? 'logarithmic' : 'linear',
@@ -52,23 +54,26 @@ const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle, log
     series: [
       {
         name: 'Infections',
-        data: data?.data.map((day, i) => [
-          returnTimeInMs(day.date),
-          day.infections - (data.data[i - 1]?.infections || 0),
-        ]),
+        data: drop(
+          data?.data.map((day, i) => [returnTimeInMs(day.date), day.infections - (data.data[i - 1]?.infections || 0)]),
+          1,
+        ),
         color: StateColors.Active,
       },
       {
         name: 'Recovered',
-        data: data?.data.map((day, i) => [
-          returnTimeInMs(day.date),
-          day.recovered - (data.data[i - 1]?.recovered || 0),
-        ]),
+        data: drop(
+          data?.data.map((day, i) => [returnTimeInMs(day.date), day.recovered - (data.data[i - 1]?.recovered || 0)]),
+          1,
+        ),
         color: StateColors.Recovered,
       },
       {
         name: 'Deaths',
-        data: data?.data.map((day, i) => [returnTimeInMs(day.date), day.deaths - (data.data[i - 1]?.deaths || 0)]),
+        data: drop(
+          data?.data.map((day, i) => [returnTimeInMs(day.date), day.deaths - (data.data[i - 1]?.deaths || 0)]),
+          1,
+        ),
         color: StateColors.Deaths,
       },
     ],
