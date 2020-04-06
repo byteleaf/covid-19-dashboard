@@ -36,6 +36,7 @@ const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle, log
     },
     yAxis: {
       type: logScale ? 'logarithmic' : 'linear',
+      min: 0,
     },
     legend: {
       layout: 'vertical',
