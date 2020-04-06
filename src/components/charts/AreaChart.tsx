@@ -46,6 +46,11 @@ const AreaChart: React.FC<AreaChartProps> = ({ loading, data, title, subtitle, l
       borderRadius: 0,
       borderWidth: 1,
       shadow: false,
+      headerFormat:
+        '<span style="font-size:10px">{point.key}</span><br /><span style="color:white">●</span> Total: <b>{point.total:,.0f}</b><br/>',
+      pointFormat: '<span style="color:{point.color}">●</span> {series.name}: <b>{point.y:,.0f}</b><br/>',
+      footerFormat: '</table>',
+      useHTML: true,
     },
     plotOptions: {
       area: {
