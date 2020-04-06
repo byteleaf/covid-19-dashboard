@@ -19,7 +19,7 @@ type SelectOption = {
 
 const lastDaysSelectOptions: SelectOption[] = [...Array(60)].map((_, i) => ({
   value: i,
-  label: i !== 0 ? `last ${i} days` : `all data`,
+  label: i !== 0 ? `last ${i} days` : `display all data`,
 }));
 
 const countrySelectOptions: SelectOption[] = Countries.map(country => ({
