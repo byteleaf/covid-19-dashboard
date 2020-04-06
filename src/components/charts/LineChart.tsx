@@ -89,6 +89,9 @@ const LineChart: React.FC<LineChartProps> = ({ loading, data, dataKey, title, su
         },
       ],
     },
+    credits: {
+      enabled: false,
+    },
   };
 
   if (loading) {
