@@ -2,7 +2,7 @@ import * as React from 'react';
 import { Switch, Route, useRouteMatch, useLocation } from 'react-router';
 import Select, { ValueType } from 'react-select';
 import { CSSProperties } from 'react';
-import Dashboard from './views/Dashboard';
+import Cumulated from './views/Cumulated';
 import AllInOne from './views/AllInOne';
 import DoublingTimes from './views/DoublingTimes';
 import useData from '../helpers/hooks/useData';
@@ -114,8 +114,8 @@ const Page: React.SFC = () => {
         )}
       </div>
       <Switch>
-        <Route exact path={path}>
-          <Dashboard isLogScale={isLogScale} loading={loading} countryData={data} />
+        <Route exact path={`${path}/cumulated`}>
+          <Cumulated isLogScale={isLogScale} loading={loading} countryData={data} />
         </Route>
         <Route path={`${path}/daily-rates`}>
           <DailyRates isLogScale={isLogScale} loading={loading} countryData={data} />

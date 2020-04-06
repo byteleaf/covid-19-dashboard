@@ -17,7 +17,16 @@ const Menu = ({ isExpanded }: { isExpanded: boolean }) => {
         } block text-center h-16 font-roboto-mono text-turquois text-base uppercase tracking-widest-2 px-4 py-1 hover:border-solid hover:text-ultralight-turquois hover:border-turquois hover:border-b-3`}
         style={{ lineHeight: '56px' }}
       >
-        Dashboard
+        Start
+      </Link>
+      <Link
+        to="/page/cumulated"
+        className={`${
+          location.pathname === '/page/cumulated' ? 'border-solid border-turquois border-b-3' : ''
+        } block text-center h-16 font-roboto-mono text-turquois text-base uppercase tracking-widest-2 px-4 py-1 hover:border-solid hover:text-ultralight-turquois hover:border-turquois hover:border-b-3`}
+        style={{ lineHeight: '56px' }}
+      >
+        Cumulated Values
       </Link>
       <Link
         to="/page/daily-rates"
