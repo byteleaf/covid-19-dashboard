@@ -7,7 +7,7 @@ export interface LogScaleSwitchProps {
 
 const LogScaleSwitch: React.FC<LogScaleSwitchProps> = ({ isLogScale, setIsLogScale }) => {
   return (
-    <div className="border border-solid border-black">
+    <div className="border border-solid border-black flex">
       <button
         className={`p-2 focus:outline-none hover:bg-light-turquois ${isLogScale ? '' : 'bg-turquois text-white'}`}
         type="button"

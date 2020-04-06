@@ -110,16 +110,18 @@ const getData = async ({ offset, selectedCountries }: GetDataProps) => {
   return mapData(data, offset);
 };
 
-const useData = ({ offset, selectedCountries }: UseDataProps) => {
+const useData = ({ offset = 0, selectedCountries }: UseDataProps) => {
   const [data, setData] = useState<Country[] | null>(null);
   const [oldSelectedCountries, setOldSelectedCountries] = useState<string[]>([]);
+  const [oldOffset, setOldOffset] = useState<number>(0);
 
   useEffect(() => {
-    if (oldSelectedCountries.length !== selectedCountries.length) {
+    if (oldSelectedCountries.length !== selectedCountries.length || offset !== oldOffset) {
       setOldSelectedCountries(selectedCountries);
+      setOldOffset(offset);
       getData({ offset: offset ?? 0, selectedCountries }).then(setData);
     }
-  }, [oldSelectedCountries, selectedCountries, offset, setData]);
+  }, [oldSelectedCountries, oldOffset, selectedCountries, offset, setData]);
 
   return {
     loading: !data,

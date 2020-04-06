@@ -2,11 +2,11 @@ import React, { useContext } from 'react';
 import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import { Country } from '../../helpers/types/types';
+import { TooltipColors, StateColors } from '../../helpers/const/Colors';
 import { ScreenHeightContext } from '../../helpers/hooks/screenHeightContext';
-import { StateColors, TooltipColors } from '../../helpers/const/Colors';
 import returnTimeInMs from '../../helpers/functions/returnTimeInMs';
 
-type AreaChartProps = {
+type BarChartProps = {
   loading: boolean;
   data: Country | null;
   title: string;
@@ -14,10 +14,15 @@ type AreaChartProps = {
   logScale: boolean;
 };
 
-const AreaChart: React.FC<AreaChartProps> = ({ loading, data, title, subtitle, logScale }) => {
+const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle, logScale }) => {
   const screenHeight = useContext(ScreenHeightContext);
 
   const options = {
+    chart: {
+      type: 'column',
+      zoomType: 'x',
+      height: screenHeight ? screenHeight * 0.6 : 600,
+    },
     title: {
       text: title,
     },
@@ -30,54 +35,59 @@ const AreaChart: React.FC<AreaChartProps> = ({ loading, data, title, subtitle, l
     yAxis: {
       type: logScale ? 'logarithmic' : 'linear',
     },
-    chart: {
-      type: 'area',
-      zoomType: 'x',
-      height: screenHeight ? screenHeight * 0.6 : 600,
+    legend: {
+      layout: 'vertical',
+      align: 'right',
+      verticalAlign: 'middle',
     },
     tooltip: {
-      shared: true,
       crosshairs: true,
-      marker: {
-        enabled: false,
-      },
+      shared: true,
       backgroundColor: TooltipColors.Background,
       borderColor: TooltipColors.Border,
       borderRadius: 0,
       borderWidth: 1,
       shadow: false,
     },
-    plotOptions: {
-      area: {
-        stacking: 'normal',
-        lineWidth: 0,
-        marker: {
-          enabled: false,
-        },
-        states: {
-          hover: {
-            enabled: false,
-          },
-        },
-      },
-    },
     series: [
       {
-        name: 'Active',
-        data: data?.data.map(day => [returnTimeInMs(day.date), day.active]),
+        name: 'Infections',
+        data: data?.data.map((day, i) => [
+          returnTimeInMs(day.date),
+          day.infections - (data.data[i - 1]?.infections || 0),
+        ]),
         color: StateColors.Active,
       },
       {
         name: 'Recovered',
-        data: data?.data.map(day => [returnTimeInMs(day.date), day.recovered]),
+        data: data?.data.map((day, i) => [
+          returnTimeInMs(day.date),
+          day.recovered - (data.data[i - 1]?.recovered || 0),
+        ]),
         color: StateColors.Recovered,
       },
       {
         name: 'Deaths',
-        data: data?.data.map(day => [returnTimeInMs(day.date), day.deaths]),
+        data: data?.data.map((day, i) => [returnTimeInMs(day.date), day.deaths - (data.data[i - 1]?.deaths || 0)]),
         color: StateColors.Deaths,
       },
     ],
+    responsive: {
+      rules: [
+        {
+          condition: {
+            maxWidth: 500,
+          },
+          chartOptions: {
+            legend: {
+              layout: 'horizontal',
+              align: 'center',
+              verticalAlign: 'bottom',
+            },
+          },
+        },
+      ],
+    },
   };
 
   if (loading) {
@@ -91,4 +101,4 @@ const AreaChart: React.FC<AreaChartProps> = ({ loading, data, title, subtitle, l
   );
 };
 
-export default AreaChart;
+export default BarChart;
