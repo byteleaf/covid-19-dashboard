@@ -43,7 +43,6 @@ const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle, log
       verticalAlign: 'middle',
     },
     tooltip: {
-      crosshairs: true,
       shared: true,
       backgroundColor: TooltipColors.Background,
       borderColor: TooltipColors.Border,
