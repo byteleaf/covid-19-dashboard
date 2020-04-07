@@ -107,7 +107,7 @@ const Page: React.SFC = () => {
             styles={countrySelectionStyles}
           />
         </div>
-        {!loading && pathname !== '/page/doubling-times' && (
+        {!loading && pathname !== '/page/doubling-times' && pathname !== '/page/daily-rates' && (
           <div className="m-2">
             <LogScaleSwitch isLogScale={isLogScale} setIsLogScale={(setTo: boolean) => setIsLogScale(setTo)} />
           </div>
@@ -118,7 +118,7 @@ const Page: React.SFC = () => {
           <Cumulated isLogScale={isLogScale} loading={loading} countryData={data} />
         </Route>
         <Route path={`${path}/daily-rates`}>
-          <DailyRates isLogScale={isLogScale} loading={loading} countryData={data} />
+          <DailyRates loading={loading} countryData={data} />
         </Route>
         <Route path={`${path}/all-in-one`}>
           <AllInOne isLogScale={isLogScale} loading={loading} countryData={data} />

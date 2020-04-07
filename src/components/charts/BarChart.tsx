@@ -12,10 +12,9 @@ type BarChartProps = {
   data: Country | null;
   title: string;
   subtitle: string;
-  logScale: boolean;
 };
 
-const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle, logScale }) => {
+const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle }) => {
   const screenHeight = useContext(ScreenHeightContext);
 
   const options = {
@@ -35,7 +34,6 @@ const BarChart: React.FC<BarChartProps> = ({ loading, data, title, subtitle, log
       crosshair: true,
     },
     yAxis: {
-      type: logScale ? 'logarithmic' : 'linear',
       min: 0,
     },
     legend: {

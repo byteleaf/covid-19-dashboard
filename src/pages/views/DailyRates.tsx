@@ -5,10 +5,9 @@ import BarChart from '../../components/charts/BarChart';
 type DailyRatesProps = {
   loading: boolean;
   countryData: Country[] | null;
-  isLogScale: boolean;
 };
 
-const DailyRates: React.FC<DailyRatesProps> = ({ loading, countryData, isLogScale }) => {
+const DailyRates: React.FC<DailyRatesProps> = ({ loading, countryData }) => {
   return (
     <div className="flex flex-wrap">
       {countryData?.map((singleCountryData, i) => (
@@ -18,7 +17,6 @@ const DailyRates: React.FC<DailyRatesProps> = ({ loading, countryData, isLogScal
           data={singleCountryData}
           title={singleCountryData.name}
           subtitle="Daily new Cases, Deaths and Recovered"
-          logScale={isLogScale}
         />
       ))}
     </div>
