@@ -39,6 +39,14 @@ const Start: React.FC = () => {
               Doubling Times
             </Link>
           </div>
+          <div className="flex w-full h-64 p-2">
+            <Link
+              to="/page/streamgraph"
+              className="flex justify-center items-center bg-turquois text-white text-center hover:bg-light-turquois w-full h-full font-roboto-mono text-base uppercase tracking-widest-2"
+            >
+              Streamgraph
+            </Link>
+          </div>
         </div>
       </div>
     </Layout>

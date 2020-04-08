@@ -11,6 +11,7 @@ import LogScaleSwitch from '../components/inputs/LogScaleSwitch';
 import Countries from '../helpers/const/Countries';
 import DefaultCountries from '../helpers/const/DefaultCountries';
 import DailyRates from './views/DailyRates';
+import Streamgraph from './views/Streamgraph';
 
 type SelectOption = {
   value: string | number;
@@ -65,6 +66,8 @@ const countrySelectionStyles = {
   }),
 };
 
+const noLogScalePages = ['/page/daily-rates', '/page/doubling-times', '/page/streamgraph'];
+
 const Page: React.SFC = () => {
   const { path } = useRouteMatch();
   const { pathname } = useLocation();
@@ -107,7 +110,7 @@ const Page: React.SFC = () => {
             styles={countrySelectionStyles}
           />
         </div>
-        {!loading && pathname !== '/page/doubling-times' && pathname !== '/page/daily-rates' && (
+        {!loading && !noLogScalePages.includes(pathname) && (
           <div className="m-2">
             <LogScaleSwitch isLogScale={isLogScale} setIsLogScale={(setTo: boolean) => setIsLogScale(setTo)} />
           </div>
@@ -125,6 +128,9 @@ const Page: React.SFC = () => {
         </Route>
         <Route path={`${path}/doubling-times`}>
           <DoublingTimes loading={loading} countryData={data} />
+        </Route>
+        <Route path={`${path}/streamgraph`}>
+          <Streamgraph loading={loading} countryData={data} />
         </Route>
       </Switch>
     </Layout>
