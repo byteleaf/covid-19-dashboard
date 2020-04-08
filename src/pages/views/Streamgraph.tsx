@@ -15,7 +15,6 @@ const DoublingTimes: React.FC<DoublingTimesProps> = ({ loading, countryData }) =
         data={countryData}
         dataKey="active"
         title="Covid-19 Active Infections per Country"
-        yAxisTitle="Active Infections"
       />
     </div>
   );

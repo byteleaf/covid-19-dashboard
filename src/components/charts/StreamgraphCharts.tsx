@@ -3,9 +3,8 @@ import Highcharts from 'highcharts';
 import HighchartsReact from 'highcharts-react-official';
 import HighchartsMore from 'highcharts/highcharts-more';
 import Streamgraph from 'highcharts/modules/streamgraph';
-import { take } from 'lodash';
-import { Country, CountryDataPoint } from '../../helpers/types/types';
-import { HelperColors, TooltipColors } from '../../helpers/const/Colors';
+import { Country } from '../../helpers/types/types';
+import { TooltipColors } from '../../helpers/const/Colors';
 import { ScreenHeightContext } from '../../helpers/hooks/screenHeightContext';
 import returnTimeInMs from '../../helpers/functions/returnTimeInMs';
 
@@ -14,10 +13,9 @@ type StreamgraphProps = {
   data: Country[] | null;
   dataKey: 'infections' | 'deaths' | 'recovered' | 'active';
   title: string;
-  yAxisTitle: string;
 };
 
-const StreamgraphCharts: React.FC<StreamgraphProps> = ({ loading, data, dataKey, title, yAxisTitle }) => {
+const StreamgraphCharts: React.FC<StreamgraphProps> = ({ loading, data, dataKey, title }) => {
   HighchartsMore(Highcharts);
   Streamgraph(Highcharts);
 
@@ -36,9 +34,9 @@ const StreamgraphCharts: React.FC<StreamgraphProps> = ({ loading, data, dataKey,
       type: 'datetime',
     },
     yAxis: {
-      title: {
-        text: yAxisTitle,
-      },
+      visible: false,
+      startOnTick: false,
+      endOnTick: false,
     },
     legend: {
       layout: 'vertical',
