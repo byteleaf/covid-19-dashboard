@@ -25,7 +25,7 @@ const StreamgraphCharts: React.FC<StreamgraphProps> = ({ loading, data, dataKey,
     chart: {
       type: 'streamgraph',
       zoomType: 'x',
-      height: screenHeight ? screenHeight * 0.6 : 600,
+      height: screenHeight ? screenHeight * 0.7 : 600,
     },
     title: {
       text: title,
